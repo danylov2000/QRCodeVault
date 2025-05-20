@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign In - ScanVault</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #343a40;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: white;
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .app-name {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #212529;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: left;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #ced4da;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #0d6efd;
+      outline: none;
+    }
+
+    .forgot-password {
+      text-align: right;
+      font-size: 0.9rem;
+      margin-top: -1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .forgot-password a {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-primary {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 0.75rem 0;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #0b5ed7;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 2rem 0;
+      color: #6c757d;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #dee2e6;
+      margin: 0 0.75rem;
+    }
+
+    .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 2px solid #4285f4;
+      color: #4285f4;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      text-decoration: none;
+    }
+
+    .google-btn:hover {
+      background-color: #e8f0fe;
+    }
+
+    /* Google icon (SVG) */
+    .google-icon {
+      width: 20px;
+      height: 20px;
+      fill: #4285f4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="app-name">ScanVault</h1>
+
+    <form action="/signin" method="POST" novalidate>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+      <div class="forgot-password">
+        <a href="/forgot-password.html">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn-primary">Sign In</button>
+    </form>
+
+    <div class="divider">or</div>
+
+    <a href="/auth/google" class="google-btn" aria-label="Sign in with Google">
+      <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21.35 11.1h-9.18v2.92h5.64c-.24 1.45-1.64 4.26-5.64 4.26-3.4 0-6.16-2.83-6.16-6.3s2.76-6.3 6.16-6.3c1.93 0 3.22.82 3.97 1.52l2.7-2.6C16.23 5.21 14.39 4.4 12 4.4 7.03 4.4 3 8.45 3 13.5c0 5.05 4.03 9.1 9 9.1 5.18 0 8.62-3.63 8.62-8.75 0-.59-.06-1.05-.27-1.75z"/>
+      </svg>
+      Sign in with Google
+    </a>
+  </div>
+</body>
+</html>

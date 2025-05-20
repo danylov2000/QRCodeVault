@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up - ScanVault</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #343a40;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* shifted down */
+      padding-top: 4rem; /* space from top */
+    }
+
+    .container {
+      background-color: white;
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 520px;
+      text-align: center;
+    }
+
+    .app-name {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #212529;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: left;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"] {
+      width: 100%;
+      min-width: 280px;
+      padding: 0.75rem 1rem;
+      border: 2px solid #ced4da;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="password"]:focus {
+      border-color: #0d6efd;
+      outline: none;
+    }
+
+    .feedback {
+      font-size: 0.85rem;
+      margin-top: 0.2rem;
+      color: #dc3545;
+      min-height: 1.2em;
+    }
+
+    .feedback.valid {
+      color: #198754;
+    }
+
+    .btn-primary {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 0.75rem 0;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      margin-top: 0.5rem;
+    }
+
+    .btn-primary:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+
+    .login-link {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .login-link a {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="app-name">ScanVault</h1>
+
+    <form id="signup-form" action="/auth/sign-up/submit" method="POST" novalidate>
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" name="firstName" placeholder="John" required />
+
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" name="lastName" placeholder="Doe" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" pattern="^\+?[0-9\s\-]{7,15}$" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="At least 10 characters" required />
+      <div id="password-feedback" class="feedback"></div>
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirmPassword" placeholder="Re-enter your password" required />
+      <div id="confirm-feedback" class="feedback"></div>
+
+      <button type="submit" id="submit-btn" class="btn-primary" disabled>Sign Up</button>
+    </form>
+
+    <div class="login-link">
+      Already have an account? <a href="/signin">Sign In</a>
+    </div>
+  </div>
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const confirmInput = document.getElementById('confirm-password');
+    const passwordFeedback = document.getElementById('password-feedback');
+    const confirmFeedback = document.getElementById('confirm-feedback');
+    const submitBtn = document.getElementById('submit-btn');
+    const form = document.getElementById('signup-form');
+
+    function validatePassword(password) {
+      const lengthValid = password.length >= 10;
+      const hasUpper = /[A-Z]/.test(password);
+      const hasLower = /[a-z]/.test(password);
+      const hasNumber = /\d/.test(password);
+      const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+      let messages = [];
+      if (!lengthValid) messages.push("At least 10 characters");
+      if (!hasUpper) messages.push("An uppercase letter");
+      if (!hasLower) messages.push("A lowercase letter");
+      if (!hasNumber) messages.push("A number");
+      if (!hasSpecial) messages.push("A special symbol");
+
+      return {
+        valid: messages.length === 0,
+        messages: messages
+      };
+    }
+
+    function checkFormValidity() {
+      const password = passwordInput.value;
+      const confirmPassword = confirmInput.value;
+
+      const pwCheck = validatePassword(password);
+
+      if (password === '') {
+        passwordFeedback.textContent = '';
+      } else if (pwCheck.valid) {
+        passwordFeedback.textContent = "Strong password ✓";
+        passwordFeedback.classList.remove('invalid');
+        passwordFeedback.classList.add('valid');
+      } else {
+        passwordFeedback.textContent = "Needs: " + pwCheck.messages.join(', ');
+        passwordFeedback.classList.remove('valid');
+        passwordFeedback.classList.add('invalid');
+      }
+
+      if (confirmPassword === '') {
+        confirmFeedback.textContent = '';
+      } else if (password === confirmPassword) {
+        confirmFeedback.textContent = "Passwords match ✓";
+        confirmFeedback.classList.remove('invalid');
+        confirmFeedback.classList.add('valid');
+      } else {
+        confirmFeedback.textContent = "Passwords do not match";
+        confirmFeedback.classList.remove('valid');
+        confirmFeedback.classList.add('invalid');
+      }
+
+      const firstNameValid = form['firstName'].value.trim() !== '';
+      const lastNameValid = form['lastName'].value.trim() !== '';
+      const phoneValid = form['phone'].checkValidity();
+      const emailValid = form['email'].checkValidity();
+
+      submitBtn.disabled = !(firstNameValid && lastNameValid && phoneValid && emailValid && pwCheck.valid && password === confirmPassword);
+    }
+
+    passwordInput.addEventListener('input', checkFormValidity);
+    confirmInput.addEventListener('input', checkFormValidity);
+    form['firstName'].addEventListener('input', checkFormValidity);
+    form['lastName'].addEventListener('input', checkFormValidity);
+    form['phone'].addEventListener('input', checkFormValidity);
+    form['email'].addEventListener('input', checkFormValidity);
+
+    form.addEventListener('submit', e => {
+      if (submitBtn.disabled) e.preventDefault();
+    });
+  </script>
+</body>
+</html>
