@@ -4020,3 +4020,6 @@ WHERE users.email = %(email_1)s AND users.password = %(password_1)s
 [2025-05-23 17:04:31,348] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:04:31] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
 [2025-05-23 17:04:31,349] INFO in app.routes.main: User requested home page
 [2025-05-23 17:04:31,349] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:04:31] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:05:34,215] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:05:34] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:05:34,218] INFO in app.routes.main: User requested home page
+[2025-05-23 17:05:34,218] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:05:34] "GET / HTTP/1.1" 200 -
