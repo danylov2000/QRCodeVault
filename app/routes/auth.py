@@ -1,4 +1,7 @@
 import os
+
+from selenium.webdriver.common.devtools.v135.network import Response
+
 from app.utils import validate_token
 import jwt
 from flask import Blueprint, render_template, request, jsonify, redirect
@@ -13,6 +16,14 @@ logger = logging.getLogger(__name__)
 
 router = Blueprint("auth", __name__)
 
+
+@router.get("/logout")
+def logout_handler():
+    response = redirect("/")
+    response.set_cookie("access", "")
+    response.set_cookie("refresh", "")
+    logger.info(f"User logged out")
+    return response
 
 @router.get("/sign-in")
 def sign_in_handler():
