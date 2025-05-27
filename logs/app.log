@@ -4023,3 +4023,683 @@ WHERE users.email = %(email_1)s AND users.password = %(password_1)s
 [2025-05-23 17:05:34,215] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:05:34] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
 [2025-05-23 17:05:34,218] INFO in app.routes.main: User requested home page
 [2025-05-23 17:05:34,218] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:05:34] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:07:01,361] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:07:01,362] INFO in app.utils: Token not valid
+[2025-05-23 17:07:01,362] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:07:01] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:10:15,021] INFO in app.routes.main: User requested home page
+[2025-05-23 17:10:15,021] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:10:15] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:46,084] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:46,084] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:46] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:46,106] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-05-23 17:14:46,340] INFO in app.routes.auth: Attempting sign-up for email: wgelabert@example.net
+[2025-05-23 17:14:46,341] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:46,341] INFO in sqlalchemy.engine.Engine: [cached since 622.1s ago] {'first_name': 'Elpidio', 'last_name': 'Hoyos', 'phone_number': '+34806994929', 'email': 'wgelabert@example.net', 'password': '884686a4ebeb7376e92f3048a72da69d8542babdacaea65f36c60eb3d42d0b2b'}
+[2025-05-23 17:14:46,342] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:46,344] INFO in app.routes.auth: User created: wgelabert@example.net
+[2025-05-23 17:14:46,345] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:46] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:46,346] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:46,346] INFO in app.utils: Token not valid
+[2025-05-23 17:14:46,347] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:46] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:46,360] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:46,360] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:46] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:46,556] INFO in app.routes.auth: Attempting sign-up for email: agustibaltasar@example.net
+[2025-05-23 17:14:46,556] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:46,556] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:46,556] INFO in sqlalchemy.engine.Engine: [cached since 622.3s ago] {'first_name': 'Olimpia', 'last_name': 'Roma', 'phone_number': '+34950 80 06 70', 'email': 'agustibaltasar@example.net', 'password': 'a7250dad8bf9ae7fd0c36372da62cceab734114ff13b95fcab943a08e272b389'}
+[2025-05-23 17:14:46,558] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:46,560] INFO in app.routes.auth: User created: agustibaltasar@example.net
+[2025-05-23 17:14:46,560] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:46] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:46,562] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:46,562] INFO in app.utils: Token not valid
+[2025-05-23 17:14:46,562] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:46] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:46,575] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:46,575] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:46] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:46,829] INFO in app.routes.auth: Attempting sign-up for email: consuelapedro@example.com
+[2025-05-23 17:14:46,829] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:46,829] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:46,829] INFO in sqlalchemy.engine.Engine: [cached since 622.5s ago] {'first_name': 'Vicenta', 'last_name': 'Gomez', 'phone_number': '+34 945 341 729', 'email': 'consuelapedro@example.com', 'password': '52cc212c51dddd18b2405507f056840a0bad5e28956f1d30bbd5a2ff22b765d7'}
+[2025-05-23 17:14:46,831] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:46,832] INFO in app.routes.auth: User created: consuelapedro@example.com
+[2025-05-23 17:14:46,832] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:46] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:46,834] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:46,834] INFO in app.utils: Token not valid
+[2025-05-23 17:14:46,834] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:46] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:46,845] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:46,845] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:46] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:47,047] INFO in app.routes.auth: Attempting sign-up for email: escolanoalma@example.com
+[2025-05-23 17:14:47,047] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:47,047] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:47,047] INFO in sqlalchemy.engine.Engine: [cached since 622.8s ago] {'first_name': 'Coral', 'last_name': 'Jordá', 'phone_number': '+34825 399 565', 'email': 'escolanoalma@example.com', 'password': 'ea56076942a72fa92984aaa1239d44fe9c003a11a3921d5623c3d050167801a5'}
+[2025-05-23 17:14:47,049] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:47,051] INFO in app.routes.auth: User created: escolanoalma@example.com
+[2025-05-23 17:14:47,051] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:47,052] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:47,053] INFO in app.utils: Token not valid
+[2025-05-23 17:14:47,053] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:47,065] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:47,065] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:47,265] INFO in app.routes.auth: Attempting sign-up for email: bienvenidagomila@example.com
+[2025-05-23 17:14:47,265] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:47,265] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:47,265] INFO in sqlalchemy.engine.Engine: [cached since 623s ago] {'first_name': 'Victoria', 'last_name': 'Alvarez', 'phone_number': '+34941807002', 'email': 'bienvenidagomila@example.com', 'password': '355570f92ea997431f8b3f72f58e68c164c5a6e73377bfc3d6e02f89e27dd7cc'}
+[2025-05-23 17:14:47,267] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:47,269] INFO in app.routes.auth: User created: bienvenidagomila@example.com
+[2025-05-23 17:14:47,269] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:47,271] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:47,271] INFO in app.utils: Token not valid
+[2025-05-23 17:14:47,271] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:47,283] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:47,283] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:47,459] INFO in app.routes.auth: Attempting sign-up for email: cirino13@example.org
+[2025-05-23 17:14:47,459] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:47,459] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:47,459] INFO in sqlalchemy.engine.Engine: [cached since 623.2s ago] {'first_name': 'Ester', 'last_name': 'Royo', 'phone_number': '+34988377458', 'email': 'cirino13@example.org', 'password': 'f836b17de1ea7673776c8ee8c12d33781d340c246f984d6365571010b111a59d'}
+[2025-05-23 17:14:47,460] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:47,462] INFO in app.routes.auth: User created: cirino13@example.org
+[2025-05-23 17:14:47,462] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:47,464] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:47,464] INFO in app.utils: Token not valid
+[2025-05-23 17:14:47,464] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:47,477] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:47,477] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:47,677] INFO in app.routes.auth: Attempting sign-up for email: chitabalaguer@example.com
+[2025-05-23 17:14:47,678] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:47,678] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:47,678] INFO in sqlalchemy.engine.Engine: [cached since 623.4s ago] {'first_name': 'Moreno', 'last_name': 'Beltrán', 'phone_number': '+34884825657', 'email': 'chitabalaguer@example.com', 'password': 'e606bf237963f8bf54dfe9cc10e21888e01ee9f2c3542b6244e6d6cbe1d363bf'}
+[2025-05-23 17:14:47,679] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:47,680] INFO in app.routes.auth: User created: chitabalaguer@example.com
+[2025-05-23 17:14:47,681] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:47,682] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:47,682] INFO in app.utils: Token not valid
+[2025-05-23 17:14:47,682] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:47,693] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:47,693] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:47,883] INFO in app.routes.auth: Attempting sign-up for email: vigiljeremias@example.com
+[2025-05-23 17:14:47,883] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:47,883] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:47,884] INFO in sqlalchemy.engine.Engine: [cached since 623.6s ago] {'first_name': 'Benito', 'last_name': 'Alvarado', 'phone_number': '+34 883163694', 'email': 'vigiljeremias@example.com', 'password': '2b6c4dadc48e8a656718864d6bfbac85ed3fe879a1b633a4013fd831e1ecd5a8'}
+[2025-05-23 17:14:47,885] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:47,887] INFO in app.routes.auth: User created: vigiljeremias@example.com
+[2025-05-23 17:14:47,887] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:47,888] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:47,889] INFO in app.utils: Token not valid
+[2025-05-23 17:14:47,889] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:47,901] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:47,901] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:47] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:48,089] INFO in app.routes.auth: Attempting sign-up for email: davilajesusa@example.org
+[2025-05-23 17:14:48,089] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:48,089] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:48,089] INFO in sqlalchemy.engine.Engine: [cached since 623.8s ago] {'first_name': 'Ximena', 'last_name': 'Bastida', 'phone_number': '+34 875 07 61 21', 'email': 'davilajesusa@example.org', 'password': '5455f94f0608f0f521a11d320a169c3f312d9fee470c8547a53aa4a5219b36ff'}
+[2025-05-23 17:14:48,090] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:48,092] INFO in app.routes.auth: User created: davilajesusa@example.org
+[2025-05-23 17:14:48,092] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:48,094] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:48,094] INFO in app.utils: Token not valid
+[2025-05-23 17:14:48,094] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:48,105] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:48,105] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:48,283] INFO in app.routes.auth: Attempting sign-up for email: bruno21@example.net
+[2025-05-23 17:14:48,283] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:48,283] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:48,283] INFO in sqlalchemy.engine.Engine: [cached since 624s ago] {'first_name': 'Reinaldo', 'last_name': 'Barberá', 'phone_number': '+34820577942', 'email': 'bruno21@example.net', 'password': 'cee3e9df8231e773fc83426b00f470b47221ad38b98fa81eed5362b718695e3a'}
+[2025-05-23 17:14:48,285] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:48,286] INFO in app.routes.auth: User created: bruno21@example.net
+[2025-05-23 17:14:48,286] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:48,288] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:48,288] INFO in app.utils: Token not valid
+[2025-05-23 17:14:48,288] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:48,299] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:48,299] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:48,490] INFO in app.routes.auth: Attempting sign-up for email: esperanzajodar@example.net
+[2025-05-23 17:14:48,490] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:48,490] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:48,490] INFO in sqlalchemy.engine.Engine: [cached since 624.2s ago] {'first_name': 'Danilo', 'last_name': 'Mena', 'phone_number': '+34 923007579', 'email': 'esperanzajodar@example.net', 'password': 'd8bdaa31bfbaaec5a56970d553d173b28ad00e40fc62bffa8be9f7ba1d20e7df'}
+[2025-05-23 17:14:48,492] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:48,493] INFO in app.routes.auth: User created: esperanzajodar@example.net
+[2025-05-23 17:14:48,494] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:48,495] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:48,495] INFO in app.utils: Token not valid
+[2025-05-23 17:14:48,495] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:48,507] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:48,507] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:48,695] INFO in app.routes.auth: Attempting sign-up for email: nherrera@example.net
+[2025-05-23 17:14:48,695] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:48,695] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:48,695] INFO in sqlalchemy.engine.Engine: [cached since 624.4s ago] {'first_name': 'Rosalina', 'last_name': 'Pinilla', 'phone_number': '+34 879 09 62 57', 'email': 'nherrera@example.net', 'password': '1708988270bc51bf1d585cc73b8b41be271878b2b8dd1a31e63d14256a1272cd'}
+[2025-05-23 17:14:48,697] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:48,698] INFO in app.routes.auth: User created: nherrera@example.net
+[2025-05-23 17:14:48,698] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:48,700] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:48,700] INFO in app.utils: Token not valid
+[2025-05-23 17:14:48,700] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:48,711] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:48,711] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:48,895] INFO in app.routes.auth: Attempting sign-up for email: alcarazhumberto@example.org
+[2025-05-23 17:14:48,895] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:48,895] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:48,895] INFO in sqlalchemy.engine.Engine: [cached since 624.6s ago] {'first_name': 'Esther', 'last_name': 'Ayuso', 'phone_number': '+34 975146125', 'email': 'alcarazhumberto@example.org', 'password': '347a10bc4b2e714eb85fad27467901a0ef7e83fcf938ff88dc273f00b9edc5ab'}
+[2025-05-23 17:14:48,897] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:48,899] INFO in app.routes.auth: User created: alcarazhumberto@example.org
+[2025-05-23 17:14:48,899] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:48,900] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:48,900] INFO in app.utils: Token not valid
+[2025-05-23 17:14:48,900] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:48,911] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:48,911] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:48] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:49,095] INFO in app.routes.auth: Attempting sign-up for email: angela67@example.net
+[2025-05-23 17:14:49,095] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:49,095] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:49,095] INFO in sqlalchemy.engine.Engine: [cached since 624.8s ago] {'first_name': 'Asunción', 'last_name': 'Hernando', 'phone_number': '+34 878266159', 'email': 'angela67@example.net', 'password': '8610231be4c3036625fd911244396232587509c6edd0df71a720f02b636f7342'}
+[2025-05-23 17:14:49,097] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:49,098] INFO in app.routes.auth: User created: angela67@example.net
+[2025-05-23 17:14:49,099] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:49,100] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:49,100] INFO in app.utils: Token not valid
+[2025-05-23 17:14:49,100] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:49,112] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:49,112] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:49,289] INFO in app.routes.auth: Attempting sign-up for email: lbarbera@example.net
+[2025-05-23 17:14:49,289] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:49,289] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:49,289] INFO in sqlalchemy.engine.Engine: [cached since 625s ago] {'first_name': 'Fortunato', 'last_name': 'Alba', 'phone_number': '+34825871365', 'email': 'lbarbera@example.net', 'password': '303ff41bfcb4c2484ee5cebf4926b85081dd3eaf6d325f1519b2bcaafdaec440'}
+[2025-05-23 17:14:49,291] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:49,293] INFO in app.routes.auth: User created: lbarbera@example.net
+[2025-05-23 17:14:49,293] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:49,295] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:49,295] INFO in app.utils: Token not valid
+[2025-05-23 17:14:49,295] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:49,306] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:49,306] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:49,489] INFO in app.routes.auth: Attempting sign-up for email: manueltatiana@example.com
+[2025-05-23 17:14:49,490] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:49,490] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:49,490] INFO in sqlalchemy.engine.Engine: [cached since 625.2s ago] {'first_name': 'Julio', 'last_name': 'Calvo', 'phone_number': '+34627 02 10 00', 'email': 'manueltatiana@example.com', 'password': '948e8fb4a65f1cd2db80d1163da0cf4477b197d9ce9d0d42088b9ea38bb3675c'}
+[2025-05-23 17:14:49,492] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:49,493] INFO in app.routes.auth: User created: manueltatiana@example.com
+[2025-05-23 17:14:49,494] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:49,495] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:49,495] INFO in app.utils: Token not valid
+[2025-05-23 17:14:49,495] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:49,508] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:49,508] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:49,701] INFO in app.routes.auth: Attempting sign-up for email: narcisaruiz@example.org
+[2025-05-23 17:14:49,702] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:49,702] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:49,702] INFO in sqlalchemy.engine.Engine: [cached since 625.4s ago] {'first_name': 'Marianela', 'last_name': 'Terrón', 'phone_number': '+34 872 757 120', 'email': 'narcisaruiz@example.org', 'password': '07db84b88ef3b4c8b48d94af979c7aeaf71d4df2ec29ebd6f0a2bfe971f626f3'}
+[2025-05-23 17:14:49,703] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:49,705] INFO in app.routes.auth: User created: narcisaruiz@example.org
+[2025-05-23 17:14:49,705] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:49,707] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:49,707] INFO in app.utils: Token not valid
+[2025-05-23 17:14:49,707] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:49,718] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:49,718] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:49,901] INFO in app.routes.auth: Attempting sign-up for email: palomoana-belen@example.org
+[2025-05-23 17:14:49,901] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:49,901] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:49,902] INFO in sqlalchemy.engine.Engine: [cached since 625.6s ago] {'first_name': 'Ramona', 'last_name': 'Vidal', 'phone_number': '+34945 534 688', 'email': 'palomoana-belen@example.org', 'password': '37d4cde26b51393d0b8c04f560432ebf8f2a08e953687d49172a50eb49900ed2'}
+[2025-05-23 17:14:49,903] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:49,905] INFO in app.routes.auth: User created: palomoana-belen@example.org
+[2025-05-23 17:14:49,905] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:49,906] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:49,906] INFO in app.utils: Token not valid
+[2025-05-23 17:14:49,906] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:49,920] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:49,920] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:49] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:50,113] INFO in app.routes.auth: Attempting sign-up for email: jose-angelazorin@example.net
+[2025-05-23 17:14:50,113] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:50,113] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:50,113] INFO in sqlalchemy.engine.Engine: [cached since 625.8s ago] {'first_name': 'Ágata', 'last_name': 'Mercader', 'phone_number': '+34942 863 606', 'email': 'jose-angelazorin@example.net', 'password': '8becdf1bb8ffb7ea702b154671f18908510be56a0b29b3d2bf6fd916a280046d'}
+[2025-05-23 17:14:50,115] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:50,117] INFO in app.routes.auth: User created: jose-angelazorin@example.net
+[2025-05-23 17:14:50,117] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:50,119] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:50,119] INFO in app.utils: Token not valid
+[2025-05-23 17:14:50,119] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:50,132] INFO in app.routes.auth: Sign-up page requested
+[2025-05-23 17:14:50,132] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-23 17:14:50,313] INFO in app.routes.auth: Attempting sign-up for email: mpallares@example.net
+[2025-05-23 17:14:50,313] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:50,314] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-05-23 17:14:50,314] INFO in sqlalchemy.engine.Engine: [cached since 626s ago] {'first_name': 'Luís', 'last_name': 'Guardia', 'phone_number': '+34921 849 252', 'email': 'mpallares@example.net', 'password': '27ef0e53e03575b3ead80d8f52fd4b1f88ef4b8cb985a33144cd5b934cb51a09'}
+[2025-05-23 17:14:50,316] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-23 17:14:50,317] INFO in app.routes.auth: User created: mpallares@example.net
+[2025-05-23 17:14:50,317] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mPOST /auth/sign-up/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:50,318] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:50,319] INFO in app.utils: Token not valid
+[2025-05-23 17:14:50,319] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:50,330] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:50,330] INFO in app.utils: Token not valid
+[2025-05-23 17:14:50,330] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:50,423] INFO in app.routes.auth: Login attempt for email: wgelabert@example.net
+[2025-05-23 17:14:50,423] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-23 17:14:50,423] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:50,423] INFO in sqlalchemy.engine.Engine: [cached since 719s ago] {'email_1': 'wgelabert@example.net', 'password_1': '884686a4ebeb7376e92f3048a72da69d8542babdacaea65f36c60eb3d42d0b2b'}
+[2025-05-23 17:14:50,426] INFO in app.utils: JWT tokens successfully created for user_id=260
+[2025-05-23 17:14:50,426] INFO in app.routes.auth: Login successful for user: wgelabert@example.net
+[2025-05-23 17:14:50,426] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:50,426] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:50,427] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:50,429] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:50,429] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:50,460] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:50,463] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:50,463] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:50,478] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:50,478] INFO in app.utils: Token not valid
+[2025-05-23 17:14:50,478] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:50,580] INFO in app.routes.auth: Login attempt for email: agustibaltasar@example.net
+[2025-05-23 17:14:50,580] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:50,580] INFO in sqlalchemy.engine.Engine: [cached since 719.2s ago] {'email_1': 'agustibaltasar@example.net', 'password_1': 'a7250dad8bf9ae7fd0c36372da62cceab734114ff13b95fcab943a08e272b389'}
+[2025-05-23 17:14:50,581] INFO in app.utils: JWT tokens successfully created for user_id=261
+[2025-05-23 17:14:50,581] INFO in app.routes.auth: Login successful for user: agustibaltasar@example.net
+[2025-05-23 17:14:50,581] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:50,581] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:50,584] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:50,585] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:50,585] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:50,616] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:50,618] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:50,618] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:50,631] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:50,631] INFO in app.utils: Token not valid
+[2025-05-23 17:14:50,631] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:50,725] INFO in app.routes.auth: Login attempt for email: consuelapedro@example.com
+[2025-05-23 17:14:50,725] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:50,725] INFO in sqlalchemy.engine.Engine: [cached since 719.3s ago] {'email_1': 'consuelapedro@example.com', 'password_1': '52cc212c51dddd18b2405507f056840a0bad5e28956f1d30bbd5a2ff22b765d7'}
+[2025-05-23 17:14:50,726] INFO in app.utils: JWT tokens successfully created for user_id=262
+[2025-05-23 17:14:50,727] INFO in app.routes.auth: Login successful for user: consuelapedro@example.com
+[2025-05-23 17:14:50,727] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:50,727] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:50,729] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:50,730] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:50,731] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:50,762] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:50,763] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:50,764] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:50,775] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:50,775] INFO in app.utils: Token not valid
+[2025-05-23 17:14:50,775] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:50,871] INFO in app.routes.auth: Login attempt for email: escolanoalma@example.com
+[2025-05-23 17:14:50,871] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:50,871] INFO in sqlalchemy.engine.Engine: [cached since 719.5s ago] {'email_1': 'escolanoalma@example.com', 'password_1': 'ea56076942a72fa92984aaa1239d44fe9c003a11a3921d5623c3d050167801a5'}
+[2025-05-23 17:14:50,872] INFO in app.utils: JWT tokens successfully created for user_id=263
+[2025-05-23 17:14:50,872] INFO in app.routes.auth: Login successful for user: escolanoalma@example.com
+[2025-05-23 17:14:50,872] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:50,872] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:50,874] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:50,875] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:50,876] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:50,908] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:50,910] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:50,910] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:50,921] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:50,921] INFO in app.utils: Token not valid
+[2025-05-23 17:14:50,921] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:50] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:51,016] INFO in app.routes.auth: Login attempt for email: bienvenidagomila@example.com
+[2025-05-23 17:14:51,017] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:51,017] INFO in sqlalchemy.engine.Engine: [cached since 719.6s ago] {'email_1': 'bienvenidagomila@example.com', 'password_1': '355570f92ea997431f8b3f72f58e68c164c5a6e73377bfc3d6e02f89e27dd7cc'}
+[2025-05-23 17:14:51,018] INFO in app.utils: JWT tokens successfully created for user_id=264
+[2025-05-23 17:14:51,018] INFO in app.routes.auth: Login successful for user: bienvenidagomila@example.com
+[2025-05-23 17:14:51,018] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:51,018] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,020] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:51,021] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:51,021] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:51,054] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,055] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:51,055] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:51,066] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:51,066] INFO in app.utils: Token not valid
+[2025-05-23 17:14:51,066] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:51,156] INFO in app.routes.auth: Login attempt for email: cirino13@example.org
+[2025-05-23 17:14:51,156] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:51,156] INFO in sqlalchemy.engine.Engine: [cached since 719.8s ago] {'email_1': 'cirino13@example.org', 'password_1': 'f836b17de1ea7673776c8ee8c12d33781d340c246f984d6365571010b111a59d'}
+[2025-05-23 17:14:51,157] INFO in app.utils: JWT tokens successfully created for user_id=265
+[2025-05-23 17:14:51,157] INFO in app.routes.auth: Login successful for user: cirino13@example.org
+[2025-05-23 17:14:51,157] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:51,157] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,159] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:51,160] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:51,160] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:51,192] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,194] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:51,194] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:51,205] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:51,205] INFO in app.utils: Token not valid
+[2025-05-23 17:14:51,205] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:51,301] INFO in app.routes.auth: Login attempt for email: chitabalaguer@example.com
+[2025-05-23 17:14:51,301] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:51,301] INFO in sqlalchemy.engine.Engine: [cached since 719.9s ago] {'email_1': 'chitabalaguer@example.com', 'password_1': 'e606bf237963f8bf54dfe9cc10e21888e01ee9f2c3542b6244e6d6cbe1d363bf'}
+[2025-05-23 17:14:51,303] INFO in app.utils: JWT tokens successfully created for user_id=266
+[2025-05-23 17:14:51,303] INFO in app.routes.auth: Login successful for user: chitabalaguer@example.com
+[2025-05-23 17:14:51,303] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:51,303] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,304] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:51,306] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:51,306] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:51,338] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,340] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:51,340] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:51,351] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:51,351] INFO in app.utils: Token not valid
+[2025-05-23 17:14:51,352] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:51,446] INFO in app.routes.auth: Login attempt for email: vigiljeremias@example.com
+[2025-05-23 17:14:51,447] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:51,447] INFO in sqlalchemy.engine.Engine: [cached since 720s ago] {'email_1': 'vigiljeremias@example.com', 'password_1': '2b6c4dadc48e8a656718864d6bfbac85ed3fe879a1b633a4013fd831e1ecd5a8'}
+[2025-05-23 17:14:51,448] INFO in app.utils: JWT tokens successfully created for user_id=267
+[2025-05-23 17:14:51,448] INFO in app.routes.auth: Login successful for user: vigiljeremias@example.com
+[2025-05-23 17:14:51,448] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:51,448] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,450] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:51,451] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:51,451] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:51,484] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,485] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:51,486] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:51,496] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:51,496] INFO in app.utils: Token not valid
+[2025-05-23 17:14:51,496] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:51,592] INFO in app.routes.auth: Login attempt for email: davilajesusa@example.org
+[2025-05-23 17:14:51,593] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:51,593] INFO in sqlalchemy.engine.Engine: [cached since 720.2s ago] {'email_1': 'davilajesusa@example.org', 'password_1': '5455f94f0608f0f521a11d320a169c3f312d9fee470c8547a53aa4a5219b36ff'}
+[2025-05-23 17:14:51,594] INFO in app.utils: JWT tokens successfully created for user_id=268
+[2025-05-23 17:14:51,594] INFO in app.routes.auth: Login successful for user: davilajesusa@example.org
+[2025-05-23 17:14:51,594] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:51,594] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,596] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:51,597] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:51,597] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:51,629] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,631] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:51,631] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:51,642] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:51,642] INFO in app.utils: Token not valid
+[2025-05-23 17:14:51,642] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:51,731] INFO in app.routes.auth: Login attempt for email: bruno21@example.net
+[2025-05-23 17:14:51,732] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:51,732] INFO in sqlalchemy.engine.Engine: [cached since 720.3s ago] {'email_1': 'bruno21@example.net', 'password_1': 'cee3e9df8231e773fc83426b00f470b47221ad38b98fa81eed5362b718695e3a'}
+[2025-05-23 17:14:51,733] INFO in app.utils: JWT tokens successfully created for user_id=269
+[2025-05-23 17:14:51,733] INFO in app.routes.auth: Login successful for user: bruno21@example.net
+[2025-05-23 17:14:51,733] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:51,733] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,735] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:51,736] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:51,736] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:51,768] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,769] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:51,769] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:51,781] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:51,781] INFO in app.utils: Token not valid
+[2025-05-23 17:14:51,781] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:51,877] INFO in app.routes.auth: Login attempt for email: esperanzajodar@example.net
+[2025-05-23 17:14:51,877] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:51,877] INFO in sqlalchemy.engine.Engine: [cached since 720.5s ago] {'email_1': 'esperanzajodar@example.net', 'password_1': 'd8bdaa31bfbaaec5a56970d553d173b28ad00e40fc62bffa8be9f7ba1d20e7df'}
+[2025-05-23 17:14:51,879] INFO in app.utils: JWT tokens successfully created for user_id=270
+[2025-05-23 17:14:51,879] INFO in app.routes.auth: Login successful for user: esperanzajodar@example.net
+[2025-05-23 17:14:51,879] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:51,879] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,880] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:51,881] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:51,882] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:51,915] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:51,916] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:51,917] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:51,928] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:51,928] INFO in app.utils: Token not valid
+[2025-05-23 17:14:51,928] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:51] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:52,016] INFO in app.routes.auth: Login attempt for email: nherrera@example.net
+[2025-05-23 17:14:52,016] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:52,017] INFO in sqlalchemy.engine.Engine: [cached since 720.6s ago] {'email_1': 'nherrera@example.net', 'password_1': '1708988270bc51bf1d585cc73b8b41be271878b2b8dd1a31e63d14256a1272cd'}
+[2025-05-23 17:14:52,018] INFO in app.utils: JWT tokens successfully created for user_id=271
+[2025-05-23 17:14:52,018] INFO in app.routes.auth: Login successful for user: nherrera@example.net
+[2025-05-23 17:14:52,018] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:52,018] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,019] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:52,021] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:52,021] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:52,047] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,049] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:52,049] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:52,059] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:52,059] INFO in app.utils: Token not valid
+[2025-05-23 17:14:52,059] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:52,163] INFO in app.routes.auth: Login attempt for email: alcarazhumberto@example.org
+[2025-05-23 17:14:52,164] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:52,164] INFO in sqlalchemy.engine.Engine: [cached since 720.8s ago] {'email_1': 'alcarazhumberto@example.org', 'password_1': '347a10bc4b2e714eb85fad27467901a0ef7e83fcf938ff88dc273f00b9edc5ab'}
+[2025-05-23 17:14:52,165] INFO in app.utils: JWT tokens successfully created for user_id=272
+[2025-05-23 17:14:52,165] INFO in app.routes.auth: Login successful for user: alcarazhumberto@example.org
+[2025-05-23 17:14:52,165] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:52,165] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,167] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:52,168] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:52,168] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:52,204] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,206] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:52,206] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:52,217] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:52,217] INFO in app.utils: Token not valid
+[2025-05-23 17:14:52,217] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:52,307] INFO in app.routes.auth: Login attempt for email: angela67@example.net
+[2025-05-23 17:14:52,308] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:52,308] INFO in sqlalchemy.engine.Engine: [cached since 720.9s ago] {'email_1': 'angela67@example.net', 'password_1': '8610231be4c3036625fd911244396232587509c6edd0df71a720f02b636f7342'}
+[2025-05-23 17:14:52,309] INFO in app.utils: JWT tokens successfully created for user_id=273
+[2025-05-23 17:14:52,309] INFO in app.routes.auth: Login successful for user: angela67@example.net
+[2025-05-23 17:14:52,309] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:52,309] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,311] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:52,312] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:52,312] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:52,344] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,346] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:52,346] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:52,357] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:52,357] INFO in app.utils: Token not valid
+[2025-05-23 17:14:52,357] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:52,446] INFO in app.routes.auth: Login attempt for email: lbarbera@example.net
+[2025-05-23 17:14:52,447] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:52,447] INFO in sqlalchemy.engine.Engine: [cached since 721s ago] {'email_1': 'lbarbera@example.net', 'password_1': '303ff41bfcb4c2484ee5cebf4926b85081dd3eaf6d325f1519b2bcaafdaec440'}
+[2025-05-23 17:14:52,448] INFO in app.utils: JWT tokens successfully created for user_id=274
+[2025-05-23 17:14:52,448] INFO in app.routes.auth: Login successful for user: lbarbera@example.net
+[2025-05-23 17:14:52,448] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:52,448] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,450] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:52,452] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:52,452] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:52,483] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,484] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:52,485] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:52,497] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:52,497] INFO in app.utils: Token not valid
+[2025-05-23 17:14:52,497] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:52,592] INFO in app.routes.auth: Login attempt for email: manueltatiana@example.com
+[2025-05-23 17:14:52,592] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:52,592] INFO in sqlalchemy.engine.Engine: [cached since 721.2s ago] {'email_1': 'manueltatiana@example.com', 'password_1': '948e8fb4a65f1cd2db80d1163da0cf4477b197d9ce9d0d42088b9ea38bb3675c'}
+[2025-05-23 17:14:52,593] INFO in app.utils: JWT tokens successfully created for user_id=275
+[2025-05-23 17:14:52,594] INFO in app.routes.auth: Login successful for user: manueltatiana@example.com
+[2025-05-23 17:14:52,594] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:52,594] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,595] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:52,596] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:52,597] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:52,629] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,631] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:52,631] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:52,643] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:52,643] INFO in app.utils: Token not valid
+[2025-05-23 17:14:52,643] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:52,737] INFO in app.routes.auth: Login attempt for email: narcisaruiz@example.org
+[2025-05-23 17:14:52,738] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:52,738] INFO in sqlalchemy.engine.Engine: [cached since 721.3s ago] {'email_1': 'narcisaruiz@example.org', 'password_1': '07db84b88ef3b4c8b48d94af979c7aeaf71d4df2ec29ebd6f0a2bfe971f626f3'}
+[2025-05-23 17:14:52,739] INFO in app.utils: JWT tokens successfully created for user_id=276
+[2025-05-23 17:14:52,739] INFO in app.routes.auth: Login successful for user: narcisaruiz@example.org
+[2025-05-23 17:14:52,739] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:52,739] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,741] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:52,742] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:52,742] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:52,774] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,775] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:52,775] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:52,786] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:52,786] INFO in app.utils: Token not valid
+[2025-05-23 17:14:52,786] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:52,883] INFO in app.routes.auth: Login attempt for email: palomoana-belen@example.org
+[2025-05-23 17:14:52,883] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:52,883] INFO in sqlalchemy.engine.Engine: [cached since 721.5s ago] {'email_1': 'palomoana-belen@example.org', 'password_1': '37d4cde26b51393d0b8c04f560432ebf8f2a08e953687d49172a50eb49900ed2'}
+[2025-05-23 17:14:52,884] INFO in app.utils: JWT tokens successfully created for user_id=277
+[2025-05-23 17:14:52,884] INFO in app.routes.auth: Login successful for user: palomoana-belen@example.org
+[2025-05-23 17:14:52,884] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:52,884] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,886] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:52,887] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:52,888] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:52,920] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:52,921] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:52,921] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:52,933] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:52,933] INFO in app.utils: Token not valid
+[2025-05-23 17:14:52,933] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:52] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:53,034] INFO in app.routes.auth: Login attempt for email: jose-angelazorin@example.net
+[2025-05-23 17:14:53,035] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:53,035] INFO in sqlalchemy.engine.Engine: [cached since 721.6s ago] {'email_1': 'jose-angelazorin@example.net', 'password_1': '8becdf1bb8ffb7ea702b154671f18908510be56a0b29b3d2bf6fd916a280046d'}
+[2025-05-23 17:14:53,036] INFO in app.utils: JWT tokens successfully created for user_id=278
+[2025-05-23 17:14:53,036] INFO in app.routes.auth: Login successful for user: jose-angelazorin@example.net
+[2025-05-23 17:14:53,036] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:53,036] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:53] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:53,038] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:53] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:53,039] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:53,039] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:53] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:53,067] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:53] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:53,069] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:53,069] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:53] "GET / HTTP/1.1" 200 -
+[2025-05-23 17:14:53,080] INFO in app.routes.auth: Sign-in page requested
+[2025-05-23 17:14:53,080] INFO in app.utils: Token not valid
+[2025-05-23 17:14:53,080] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:53] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-23 17:14:53,168] INFO in app.routes.auth: Login attempt for email: mpallares@example.net
+[2025-05-23 17:14:53,168] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-23 17:14:53,168] INFO in sqlalchemy.engine.Engine: [cached since 721.8s ago] {'email_1': 'mpallares@example.net', 'password_1': '27ef0e53e03575b3ead80d8f52fd4b1f88ef4b8cb985a33144cd5b934cb51a09'}
+[2025-05-23 17:14:53,169] INFO in app.utils: JWT tokens successfully created for user_id=279
+[2025-05-23 17:14:53,169] INFO in app.routes.auth: Login successful for user: mpallares@example.net
+[2025-05-23 17:14:53,169] INFO in app.routes.auth: Redirecting to account
+[2025-05-23 17:14:53,170] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:53] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:53,171] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:53] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-23 17:14:53,173] INFO in app.middlewares: Valid token: access granted
+[2025-05-23 17:14:53,173] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:53] "GET /account/ HTTP/1.1" 200 -
+[2025-05-23 17:14:53,206] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:53] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-23 17:14:53,208] INFO in app.routes.main: User requested home page
+[2025-05-23 17:14:53,209] INFO in werkzeug: 127.0.0.1 - - [23/May/2025 17:14:53] "GET / HTTP/1.1" 200 -
+[2025-05-27 13:45:23,404] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-05-27 13:45:23,404] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-05-27 13:45:33,919] INFO in app.routes.main: User requested home page
+[2025-05-27 13:45:33,930] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 13:45:33] "GET / HTTP/1.1" 200 -
+[2025-05-27 13:45:33,990] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 13:45:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-05-27 13:50:53,187] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-05-27 13:50:53,187] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-05-27 13:51:00,499] INFO in app.routes.main: User requested home page
+[2025-05-27 13:51:00,501] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 13:51:00] "GET / HTTP/1.1" 200 -
+[2025-05-27 13:51:11,234] INFO in app.routes.auth: Sign-in page requested
+[2025-05-27 13:51:11,234] INFO in app.utils: Token not valid
+[2025-05-27 13:51:11,246] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 13:51:11] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-27 13:51:19,131] INFO in app.utils: Token not valid
+[2025-05-27 13:51:19,132] INFO in app.middlewares: Non-Valid token
+[2025-05-27 13:51:19,132] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 13:51:19] "[32mGET /account/ HTTP/1.1[0m" 302 -
+[2025-05-27 13:51:19,135] INFO in app.routes.auth: Sign-in page requested
+[2025-05-27 13:51:19,135] INFO in app.utils: Token not valid
+[2025-05-27 13:51:19,136] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 13:51:19] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-27 13:51:20,377] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 13:51:20] "[33mGET /docs HTTP/1.1[0m" 404 -
+[2025-05-27 13:51:20,946] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 13:51:20] "[33mGET /dasdasd HTTP/1.1[0m" 404 -
+[2025-05-27 13:54:59,171] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-05-27 13:54:59,171] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-05-27 13:55:00,577] INFO in app.routes.main: User requested home page
+[2025-05-27 13:55:00,578] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 13:55:00] "GET / HTTP/1.1" 200 -
+[2025-05-27 13:55:03,155] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 13:55:03] "[33mGET /docs HTTP/1.1[0m" 404 -
+[2025-05-27 13:55:03,534] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 13:55:03] "[33mGET /das HTTP/1.1[0m" 404 -
+[2025-05-27 14:07:55,491] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-05-27 14:07:55,491] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-05-27 14:07:58,476] INFO in app.routes.main: User requested home page
+[2025-05-27 14:07:58,477] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:07:58] "GET / HTTP/1.1" 200 -
+[2025-05-27 14:08:02,128] INFO in app.utils: Token not valid
+[2025-05-27 14:08:02,128] INFO in app.middlewares: Non-Valid token
+[2025-05-27 14:08:02,128] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:08:02] "[32mGET /account/ HTTP/1.1[0m" 302 -
+[2025-05-27 14:08:02,131] INFO in app.routes.auth: Sign-in page requested
+[2025-05-27 14:08:02,131] INFO in app.utils: Token not valid
+[2025-05-27 14:08:02,132] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:08:02] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-27 14:08:03,343] ERROR in app.routes.errors: That URL is not found
+[2025-05-27 14:08:03,344] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:08:03] "[33mGET /asdadad HTTP/1.1[0m" 404 -
+[2025-05-27 14:08:05,967] INFO in app.routes.main: User requested home page
+[2025-05-27 14:08:05,967] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:08:05] "GET / HTTP/1.1" 200 -
+[2025-05-27 14:08:10,500] ERROR in app.routes.errors: That URL is not found
+[2025-05-27 14:08:10,501] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:08:10] "[33mGET /docs HTTP/1.1[0m" 404 -
+[2025-05-27 14:08:11,131] ERROR in app.routes.errors: That URL is not found
+[2025-05-27 14:08:11,131] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:08:11] "[33mGET /dsad HTTP/1.1[0m" 404 -
+[2025-05-27 14:08:17,934] INFO in app.routes.main: User requested home page
+[2025-05-27 14:08:17,934] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:08:17] "GET / HTTP/1.1" 200 -
+[2025-05-27 14:08:59,077] INFO in app.routes.auth: Sign-in page requested
+[2025-05-27 14:08:59,077] INFO in app.utils: Token not valid
+[2025-05-27 14:08:59,077] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:08:59] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-27 14:09:05,199] INFO in app.routes.auth: Login attempt for email: test@gmail.com
+[2025-05-27 14:09:05,200] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-27 14:09:05,202] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-27 14:09:05,202] INFO in sqlalchemy.engine.Engine: [generated in 0.00016s] {'email_1': 'test@gmail.com', 'password_1': '638835294905c5a4cd7d31a2fe4b58c3631ede55568e1b1d178e02c5b1bcaa85'}
+[2025-05-27 14:09:05,216] INFO in app.utils: JWT tokens successfully created for user_id=1
+[2025-05-27 14:09:05,216] INFO in app.routes.auth: Login successful for user: test@gmail.com
+[2025-05-27 14:09:05,216] INFO in app.routes.auth: Redirecting to account
+[2025-05-27 14:09:05,216] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:09:05] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-27 14:09:05,219] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:09:05] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-27 14:09:05,221] INFO in app.middlewares: Valid token: access granted
+[2025-05-27 14:09:05,237] INFO in werkzeug: 127.0.0.1 - - [27/May/2025 14:09:05] "GET /account/ HTTP/1.1" 200 -
