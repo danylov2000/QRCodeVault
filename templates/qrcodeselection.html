@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ScanVault | Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        /* Top navigation bar */
+        header {
+            background-color: #2563eb;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            cursor: default;
+            user-select: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #a5b4fc;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 25px;
+            transition: transform 0.2s ease;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ScanVault</div>
+        <nav>
+            <a href="/blog">Blog</a>
+            <a href="/support">Support</a>
+            <a href="/auth/logout">Log Out</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Generate a QR Code</h1>
+        <p class="subtitle">Select the type of data you want to embed in your QR code</p>
+
+        <div class="grid">
+            <div class="card" onclick="location.href='/qrcode/urlgen'">
+                <h3>Website URL</h3>
+                <p>Link to any website</p>
+            </div>
+            <div class="card" onclick="location.href='/generate/text'">
+                <h3>Text Message</h3>
+                <p>Embed a short message or note</p>
+            </div>
+            <div class="card" onclick="location.href='/generate/email'">
+                <h3>Email</h3>
+                <p>Pre-fill recipient, subject, and message</p>
+            </div>
+            <div class="card" onclick="location.href='/generate/phone'">
+                <h3>Phone Number</h3>
+                <p>Tap to call a number</p>
+            </div>
+            <div class="card" onclick="location.href='/generate/sms'">
+                <h3>SMS</h3>
+                <p>Pre-fill a text message to send</p>
+            </div>
+            <div class="card" onclick="location.href='/generate/wifi'">
+                <h3>Wi-Fi Access</h3>
+                <p>Connect to a Wi-Fi network</p>
+            </div>
+            <div class="card" onclick="location.href='/qrcode/vcard'">
+                <h3>Contact Info (vCard)</h3>
+                <p>Share your business card details</p>
+            </div>
+            <div class="card" onclick="location.href='/generate/event'">
+                <h3>Event Details</h3>
+                <p>Add to calendar (location, time, etc.)</p>
+            </div>
+            <div class="card" onclick="location.href='/qrcode//mapgen'">
+                <h3>Map Location</h3>
+                <p>Drop a pin on a map</p>
+            </div>
+            <div class="card" onclick="location.href='/generate/crypto'">
+                <h3>Crypto Payment</h3>
+                <p>Send a crypto address &amp; amount</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your QR Code - ScanVault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      background: #f5f8fc;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 30px 15px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p.description {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    img.qr-code {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border: 6px solid #f0f0f0;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .btn-group {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 8px;
+      background-color: #0074d9;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #005fa3;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px;
+      }
+
+      .btn {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your QR Code</h1>
+    <p class="description">Scan or download your generated QR code below.</p>
+
+    <img class="qr-code" src="{{ qr_image_url }}" alt="Your QR Code" />
+
+    <div class="btn-group">
+      <a href="{{ qr_image_url }}" download class="btn">Download</a>
+      <a href="/qrcode" class="btn">Generate Another</a>
+    </div>
+
+    <footer>
+      © 2025 ScanVault. Built with ❤️ by Danylo.
+    </footer>
+  </div>
+</body>
+</html>

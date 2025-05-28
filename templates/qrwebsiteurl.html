@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Generate Website QR | ScanVault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      background: #f4f7fb;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.1rem;
+      background: #0062cc;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #004999;
+    }
+
+    .preview {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .preview img {
+      max-width: 250px;
+      margin-top: 10px;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .back-link a {
+      color: #0062cc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Generate Website QR</h1>
+
+    <form action="/qrcode/generate?type=url" method="POST">
+      <label for="url">Website URL</label>
+      <input type="text" name="url" id="url" placeholder="https://example.com" required>
+
+<!--      <label for="format">Select Format</label>-->
+<!--      <select name="format" id="format" required>-->
+<!--        <option value="png">PNG</option>-->
+<!--        <option value="svg">SVG</option>-->
+<!--        <option value="pdf">PDF</option>-->
+<!--        <option value="eps">EPS</option>-->
+<!--      </select>-->
+
+      <button type="submit">Generate & Save</button>
+    </form>
+
+    <div class="preview">
+      {% if qr_code_url %}
+        <p>Preview:</p>
+        <img src="{{ qr_code_url }}" alt="QR Code Preview">
+      {% endif %}
+    </div>
+
+    <div class="back-link">
+      <a href="/account">← Back to Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>

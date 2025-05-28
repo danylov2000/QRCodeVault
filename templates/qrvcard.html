@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>vCard Generator | ScanVault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      background: #f5f8fc;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    legend {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 25px;
+      background: #0074d9;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #005ea8;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Create a vCard QR Code</h1>
+    <form method="POST" action="/generate/vcard">
+
+      <fieldset>
+        <legend>Your Name:</legend>
+        <label for="first_name">First name</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+        <label for="last_name">Last name</label>
+        <input type="text" id="last_name" name="last_name" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contact:</legend>
+        <label for="mobile">Mobile</label>
+        <input type="tel" id="mobile" name="mobile">
+
+        <label for="phone1">Phone</label>
+        <input type="tel" id="phone1" name="phone1">
+
+        <label for="fax">Fax</label>
+        <input type="text" id="fax" name="fax">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Company:</legend>
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company">
+
+        <label for="job_title">Your Job</label>
+        <input type="text" id="job_title" name="job_title">
+      </fieldset>
+
+      <fieldset>
+        <legend>Street:</legend>
+        <label for="street">Street</label>
+        <input type="text" id="street" name="street">
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city">
+
+        <label for="zip">ZIP</label>
+        <input type="text" id="zip" name="zip">
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state">
+
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country">
+      </fieldset>
+
+      <fieldset>
+        <legend>Website:</legend>
+        <label for="website">www.your-website.com</label>
+        <input type="url" id="website" name="website">
+      </fieldset>
+
+      <label for="format">QR Code Format</label>
+      <select name="format" id="format" required>
+        <option value="png">PNG</option>
+        <option value="svg">SVG</option>
+        <option value="pdf">PDF</option>
+        <option value="eps">EPS</option>
+      </select>
+
+      <button type="submit">Generate & Save QR</button>
+    </form>
+  </div>
+</body>
+</html>

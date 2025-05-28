@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CodeVault - Support</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    header {
+      background: #2563eb;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1.2px;
+      cursor: default;
+    }
+    .logo img {
+      height: 36px;
+      width: 36px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #a5b4fc;
+    }
+    .container {
+      max-width: 460px;
+      background: #fff;
+      padding: 40px 40px 50px 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+      margin: 60px auto 40px auto;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 0.2rem;
+      color: #333;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 10px;
+    }
+    label {
+      font-weight: 600;
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+      color: #222;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #2563eb;
+      outline: none;
+      box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+    }
+    textarea {
+      min-height: 100px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 14px 0;
+      background-color: #2563eb;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #1e40af;
+    }
+    @media (max-width: 480px) {
+      .container {
+        width: 90%;
+        padding: 30px 20px 40px 20px;
+      }
+      nav a {
+        margin-left: 10px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <!-- Replace with your actual logo -->
+      <img src="https://via.placeholder.com/36" alt="CodeVault Logo" />
+      CodeVault
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/support" aria-current="page">Support</a>
+      <a href="/auth/sign-in">Sign In</a>
+      <a href="/auth/sign-up">Sign Up</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Support Ticket</h1>
+    <form id="supportForm" action="/submit-ticket" method="POST">
+      <div>
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+      </div>
+      <div>
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" placeholder="Your email address" required />
+      </div>
+      <div>
+        <label for="subject">Subject</label><br />
+        <input type="text" id="subject" name="subject" placeholder="Brief summary" required />
+      </div>
+      <div>
+        <label for="description">Description</label><br />
+        <textarea id="description" name="description" placeholder="Explain your issue or question" required></textarea>
+      </div>
+      <button type="submit">Submit Ticket</button>
+    </form>
+  </div>
+</body>
+</html>

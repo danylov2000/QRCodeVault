@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ScanVault Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f5f8fc;
+      padding: 30px 15px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Top bar styling */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 40px;
+    }
+
+    .top-bar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0062cc;
+      cursor: pointer;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-buttons button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: #0062cc;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #e0f0ff;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 30px;
+      color: #0074d9;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px;
+      }
+
+      .top-bar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 15px;
+      }
+
+      .nav-buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar with logo and buttons -->
+  <div class="top-bar">
+    <div class="logo" onclick="location.href='/'">ScanVault</div>
+    <div class="nav-buttons">
+      <button onclick="location.href='/blog'">Blog</button>
+      <button onclick="location.href='/support'">Support</button>
+      <button onclick="location.href='/logout'">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>ScanVault Blog</h1>
+    <p style="text-align: center;">Stay updated on how ScanVault is building the future of QR technology.</p>
+
+    <h2>🔍 What Are QR Codes and Why They Matter</h2>
+    <p>QR (Quick Response) codes are two-dimensional barcodes that store data. Originally developed in Japan for automotive manufacturing, they are now widely used in marketing, payments, identity verification, and more. What makes QR codes powerful is their ability to instantly convey data with a quick scan using a smartphone camera. With the rise of contactless technology and mobile-first design, QR codes have become essential tools for businesses and developers alike.</p>
+
+    <h2>💡 How ScanVault Helps You Generate Smart QR Codes</h2>
+    <p>ScanVault is a simple, modern QR code generator that allows you to create dynamic QR codes for all kinds of data—websites, locations, vCards, and more. Built with Flask and using the <code>segno</code> library under the hood, ScanVault gives you a clean interface and reliable output in formats like PNG, SVG, and PDF. It also supports personal storage, so you can track or manage your generated QR codes securely.</p>
+
+    <h2>👨‍💻 About the Developer</h2>
+    <p>ScanVault was developed by an independent software developer with a focus on building practical, user-friendly web applications. The project showcases clean architecture using Flask for the backend and lightweight HTML/CSS for the frontend. The goal behind ScanVault is to provide a streamlined, secure, and efficient tool for generating and managing QR codes. Continuous updates are planned to ensure high performance, accessibility, and ease of use across devices.</p>
+
+    <h2>📈 What’s Coming Next</h2>
+    <p>Soon you'll be able to generate password-protected QR codes, analyze scan statistics, and maybe even create dynamic QR codes that update after being generated. Stay tuned for updates!</p>
+
+    <footer>
+      © 2025 ScanVault. Built with ❤️ by Danylo.
+    </footer>
+  </div>
+</body>
+</html>

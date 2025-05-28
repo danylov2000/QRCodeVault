@@ -48,19 +48,24 @@
     }
 
     .container {
-      max-width: 600px;
-      margin: 60px auto;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .dashboard-header {
       background: #fff;
-      padding: 40px;
-      border-radius: 10px;
+      padding: 30px;
+      border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
       text-align: center;
+      margin-bottom: 40px;
     }
 
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
       color: #111827;
+      margin-bottom: 10px;
     }
 
     p {
@@ -70,7 +75,7 @@
 
     .btn {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 20px;
       padding: 12px 24px;
       background-color: #2563eb;
       color: white;
@@ -78,16 +83,53 @@
       border-radius: 6px;
       font-weight: bold;
       transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
     }
 
     .btn:hover {
       background-color: #1e3a8a;
     }
 
+    .qrcode-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .qrcode-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .qrcode-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .qrcode-card img {
+      max-width: 100px;
+      margin-bottom: 15px;
+    }
+
+    .qrcode-card h3 {
+      font-size: 1.1rem;
+      margin: 0;
+      color: #1f2937;
+    }
+
     @media (max-width: 480px) {
-      .container {
-        margin: 40px 16px;
-        padding: 30px 20px;
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
       }
     }
   </style>
@@ -100,17 +142,31 @@
       ScanVault
     </div>
     <nav>
-      <a href="blog.html">Blog</a>
-      <a href="support.html">Support</a>
+      <a href="/blog">Blog</a>
+      <a href="/support">Support</a>
       <a href="/auth/logout">Log Out</a>
     </nav>
   </header>
 
   <div class="container">
-    <h1>Welcome back, {{ name }}!</h1>
-    <p>This is your account dashboard. From here you can manage your QR codes, view activity, and customize your settings.</p>
+    <div class="dashboard-header">
+      <h1>Welcome back, {{ name }}!</h1>
+      <p>This is your dashboard. Generate new QR codes or access your personal collection below.</p>
+      <a class="btn" href="/qrcode">Generate QR Code</a>
+    </div>
 
-
+    {% if qr_codes %}
+    <div class="qrcode-grid">
+      {% for code in qr_codes %}
+        <a href="" class="qrcode-card">
+          <img src="{{code.get_svg()}}" alt="QR Code" />
+          <h3>{{ code.id }}</h3>
+        </a>
+      {% endfor %}
+    </div>
+    {% else %}
+      <p style="text-align:center; color:#6b7280;">You don’t have any QR codes yet.</p>
+    {% endif %}
   </div>
 
 </body>
