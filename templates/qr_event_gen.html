@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Generate Map Location QR | ScanVault</title>
+  <title>Generate Calendar QR | ScanVault</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
@@ -34,13 +34,18 @@
     }
 
     input[type="text"],
-    select {
+    input[type="datetime-local"],
+    textarea {
       width: 100%;
       padding: 10px;
       font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 8px;
       margin-bottom: 15px;
+    }
+
+    textarea {
+      resize: vertical;
     }
 
     button {
@@ -82,16 +87,23 @@
 </head>
 <body>
   <div class="container">
-    <h1>Generate Location QR</h1>
+    <h1>Generate Calendar QR</h1>
 
-    <form action="/qrcode/generate?type=map" method="POST">
-      <label for="latitude">Latitude</label>
-      <input type="text" name="latitude" id="latitude" placeholder="e.g. 40.7128" required>
+    <form action="/qrcode/generate?type=calendar" method="POST">
+      <label for="summary">Event Title</label>
+      <input type="text" name="summary" id="summary" placeholder="e.g. Team Meeting" required>
 
-      <label for="longitude">Longitude</label>
-      <input type="text" name="longitude" id="longitude" placeholder="e.g. -74.0060" required>
+      <label for="description">Description</label>
+      <textarea name="description" id="description" rows="3" placeholder="Optional description..."></textarea>
 
+      <label for="location">Location</label>
+      <input type="text" name="location" id="location" placeholder="e.g. 123 Main St or Zoom link">
 
+      <label for="start">Start Time</label>
+      <input type="datetime-local" name="start" id="start" required>
+
+      <label for="end">End Time</label>
+      <input type="datetime-local" name="end" id="end" required>
 
       <button type="submit">Generate & Save</button>
     </form>

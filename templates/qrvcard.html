@@ -75,7 +75,7 @@
 <body>
   <div class="container">
     <h1>Create a vCard QR Code</h1>
-    <form method="POST" action="/generate/vcard">
+    <form method="POST" action="/qrcode/generate?type=vcard">
 
       <fieldset>
         <legend>Your Name:</legend>
@@ -134,13 +134,7 @@
         <input type="url" id="website" name="website">
       </fieldset>
 
-      <label for="format">QR Code Format</label>
-      <select name="format" id="format" required>
-        <option value="png">PNG</option>
-        <option value="svg">SVG</option>
-        <option value="pdf">PDF</option>
-        <option value="eps">EPS</option>
-      </select>
+
 
       <button type="submit">Generate & Save QR</button>
     </form>

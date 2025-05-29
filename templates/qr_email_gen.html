@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Generate Map Location QR | ScanVault</title>
+  <title>Generate Email QR | ScanVault</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
@@ -34,7 +34,8 @@
     }
 
     input[type="text"],
-    select {
+    input[type="email"],
+    textarea {
       width: 100%;
       padding: 10px;
       font-size: 1rem;
@@ -43,11 +44,16 @@
       margin-bottom: 15px;
     }
 
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
     button {
       width: 100%;
       padding: 12px;
       font-size: 1.1rem;
-      background: #0062cc;
+      background: #2563eb;
       color: white;
       border: none;
       border-radius: 10px;
@@ -56,7 +62,7 @@
     }
 
     button:hover {
-      background: #004999;
+      background: #1e3a8a;
     }
 
     .preview {
@@ -75,23 +81,30 @@
     }
 
     .back-link a {
-      color: #0062cc;
+      color: #2563eb;
       text-decoration: none;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Generate Location QR</h1>
+    <h1>Generate Email QR</h1>
 
-    <form action="/qrcode/generate?type=map" method="POST">
-      <label for="latitude">Latitude</label>
-      <input type="text" name="latitude" id="latitude" placeholder="e.g. 40.7128" required>
+    <form action="/qrcode/generate?type=email" method="POST">
+      <label for="to_email">To</label>
+      <input type="email" name="to_email" id="to_email" placeholder="recipient@example.com" required>
 
-      <label for="longitude">Longitude</label>
-      <input type="text" name="longitude" id="longitude" placeholder="e.g. -74.0060" required>
+      <label for="cc_email">CC</label>
+      <input type="text" name="cc_email" id="cc_email" placeholder="cc@example.com (optional)">
 
+      <label for="bcc_email">BCC</label>
+      <input type="text" name="bcc_email" id="bcc_email" placeholder="bcc@example.com (optional)">
 
+      <label for="subject">Subject</label>
+      <input type="text" name="subject" id="subject" placeholder="Enter email subject">
+
+      <label for="body">Message</label>
+      <textarea name="body" id="body" placeholder="Write your message here..."></textarea>
 
       <button type="submit">Generate & Save</button>
     </form>

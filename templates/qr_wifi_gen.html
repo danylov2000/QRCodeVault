@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Generate Map Location QR | ScanVault</title>
+  <title>Generate Wi-Fi QR | ScanVault</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
@@ -34,6 +34,7 @@
     }
 
     input[type="text"],
+    input[type="password"],
     select {
       width: 100%;
       padding: 10px;
@@ -82,16 +83,21 @@
 </head>
 <body>
   <div class="container">
-    <h1>Generate Location QR</h1>
+    <h1>Generate Wi-Fi QR</h1>
 
-    <form action="/qrcode/generate?type=map" method="POST">
-      <label for="latitude">Latitude</label>
-      <input type="text" name="latitude" id="latitude" placeholder="e.g. 40.7128" required>
+    <form action="/qrcode/generate?type=wifi" method="POST">
+      <label for="ssid">Wi-Fi Network Name (SSID)</label>
+      <input type="text" name="ssid" id="ssid" placeholder="Enter your Wi-Fi network name" required>
 
-      <label for="longitude">Longitude</label>
-      <input type="text" name="longitude" id="longitude" placeholder="e.g. -74.0060" required>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="Enter Wi-Fi password" required>
 
-
+      <label for="encryption">Encryption Type</label>
+      <select name="encryption" id="encryption" required>
+        <option value="WPA">WPA/WPA2</option>
+        <option value="WEP">WEP</option>
+        <option value="nopass">None (Open Network)</option>
+      </select>
 
       <button type="submit">Generate & Save</button>
     </form>
@@ -99,7 +105,7 @@
     <div class="preview">
       {% if qr_code_url %}
         <p>Preview:</p>
-        <img src="{{ qr_code_url }}" alt="QR Code Preview">
+        <img src="{{ qr_code_url }}" alt="Wi-Fi QR Code Preview" />
       {% endif %}
     </div>
 
