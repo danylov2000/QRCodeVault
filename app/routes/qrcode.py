@@ -77,40 +77,23 @@ def qrcode_generate_handler(payload):
 
         qrcode = segno.make(request.form.get("url"), micro=False)
 
-        qr = QrCode(qr_type=qr_type, pickle_obj=qrcode, user=user)
-        session.add(qr)
-        session.commit()
 
-        return render_template("qrcode_display.html", qr_image_url=qrcode.svg_data_uri())
     elif qr_type == "map":
         lat = float(request.form.get("latitude"))
         long = float(request.form.get("longitude"))
         qrcode = segno.helpers.make_geo(lat, long)
 
-        qr = QrCode(qr_type=qr_type, pickle_obj=qrcode, user=user)
-        session.add(qr)
-        session.commit()
-
-        return render_template("qrcode_display.html", qr_image_url=qrcode.svg_data_uri())
 
     elif qr_type == "text":
 
         message_text = request.form.get("message")
-
         phone_number = request.form.get("phone")
-
         encoded_message = urllib.parse.quote(message_text)
-
         message_uri = f"sms:{phone_number}?body={encoded_message}"
 
         qrcode = segno.make(message_uri)
 
-        qr = QrCode(qr_type=qr_type, pickle_obj=qrcode, user=user)
 
-        session.add(qr)
-        session.commit()
-
-        return render_template("qrcode_display.html", qr_image_url=qrcode.svg_data_uri())
     elif qr_type == "vcard":
         first_name = request.form.get("first_name")
         last_name = request.form.get("last_name")
@@ -143,13 +126,6 @@ def qrcode_generate_handler(payload):
             country=country,
             url=website)
 
-        qr = QrCode(qr_type=qr_type, pickle_obj=qrcode, user=user)
-
-        session.add(qr)
-        session.commit()
-
-        return render_template("qrcode_display.html", qr_image_url=qrcode.svg_data_uri())
-
     elif qr_type == "email":
         email = request.form.get("to_email")
         cc_emails = request.form.get("cc_email")
@@ -159,22 +135,10 @@ def qrcode_generate_handler(payload):
 
         qrcode = segno.helpers.make_email(to=email, cc=cc_emails, bcc=bcc_email, subject=subject, body=body)
 
-        qr = QrCode(qr_type=qr_type, pickle_obj=qrcode, user=user)
-
-        session.add(qr)
-        session.commit()
-
-        return render_template("qrcode_display.html", qr_image_url=qrcode.svg_data_uri())
-
     elif qr_type == "call":
         phone = request.form.get("phone")
         qrcode = segno.make(f"tel:{phone}")
-        qr = QrCode(qr_type=qr_type, pickle_obj=qrcode, user=user)
 
-        session.add(qr)
-        session.commit()
-
-        return render_template("qrcode_display.html", qr_image_url=qrcode.svg_data_uri())
 
     elif qr_type == "wifi":
         wifi_name = request.form.get("ssid")
@@ -182,52 +146,13 @@ def qrcode_generate_handler(payload):
         wifi_encryption = request.form.get("encryption")
 
         qrcode = segno.helpers.make_wifi(ssid=wifi_name, password=wifi_pass, security=wifi_encryption)
-        qr = QrCode(qr_type=qr_type, pickle_obj=qrcode, user=user)
 
-        session.add(qr)
-        session.commit()
-
-        return render_template("qrcode_display.html", qr_image_url=qrcode.svg_data_uri())
+    else:
+        return render_template("error.html")
 
 
-    # elif qr_type == "calendar":
-    #
-    #     from datetime import datetime
-    #
-    #     import textwrap
-    #
-    #     event_title = request.form.get("summary")
-    #
-    #     description = request.form.get("description")
-    #
-    #     location = request.form.get("location")
-    #
-    #     start = request.form.get("start")  # format: YYYY-MM-DD HH:MM
-    #
-    #     end = request.form.get("end")
-    #
-    #     start_time = datetime.strptime(start, "%Y-%m-%dT%H:%M").strftime("%Y%m%dT%H%M%SZ")
-    #     end_time = datetime.strptime(end, "%Y-%m-%dT%H:%M").strftime("%Y%m%dT%H%M%SZ")
-    #
-    #     calendar_event = textwrap.dedent(f"""\
-    #         BEGIN:VCALENDAR
-    #         VERSION:2.0
-    #         BEGIN:VEVENT
-    #         SUMMARY:{event_title}
-    #         DESCRIPTION:{description}
-    #         LOCATION:{location}
-    #         DTSTART:{start_time}
-    #         DTEND:{end_time}
-    #         END:VEVENT
-    #         END:VCALENDAR
-    #     """)
-    #
-    #     qrcode = segno.make(calendar_event)
-    #
-    #     qr = QrCode(qr_type=qr_type, pickle_obj=qrcode, user=user)
-    #
-    #     session.add(qr)
-    #
-    #     session.commit()
-    #
-    #     return render_template("qrcode_display.html", qr_image_url=qrcode.svg_data_uri())
+    qr = QrCode(qr_type=qr_type, pickle_obj=qrcode, user=user)
+    session.add(qr)
+    session.commit()
+
+    return render_template("qrcode_display.html", qr_image_url=qrcode.svg_data_uri())

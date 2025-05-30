@@ -18,8 +18,8 @@
       height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: flex-start; /* shifted down */
-      padding-top: 4rem; /* space from top */
+      align-items: flex-start;
+      padding-top: 4rem;
     }
 
     .container {
@@ -102,6 +102,38 @@
       cursor: not-allowed;
     }
 
+    .google-section {
+      margin-top: 1.5rem;
+    }
+
+    .google-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      justify-content: center;
+      background-color: white;
+      color: #444;
+      border: 1px solid #ddd;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow 0.2s ease;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .google-btn img {
+      height: 20px;
+      width: 20px;
+    }
+
+    .google-btn:hover {
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    }
+
     .login-link {
       margin-top: 1.5rem;
       font-size: 1rem;
@@ -146,6 +178,14 @@
 
       <button type="submit" id="submit-btn" class="btn-primary" disabled>Sign Up</button>
     </form>
+
+    <div class="google-section">
+      <p style="margin-bottom: 0.75rem; font-weight: 500;">Or sign up with:</p>
+      <a href="/auth/google" class="google-btn">
+        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo" />
+        Sign up with Google
+      </a>
+    </div>
 
     <div class="login-link">
       Already have an account? <a href="/signin">Sign In</a>

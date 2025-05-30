@@ -7315,3 +7315,55 @@ WHERE users.id = %(pk_1)s
 [2025-05-29 18:36:07,639] INFO in sqlalchemy.engine.Engine: [generated in 0.00022s] {'qr_type': 'calendar', 'pickle_obj': <psycopg2.extensions.Binary object at 0x000001BBB18E6EB0>, 'user_id': 1}
 [2025-05-29 18:36:07,641] INFO in sqlalchemy.engine.Engine: COMMIT
 [2025-05-29 18:36:07,645] INFO in werkzeug: 127.0.0.1 - - [29/May/2025 18:36:07] "POST /qrcode/generate?type=calendar HTTP/1.1" 200 -
+[2025-05-30 15:16:25,602] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-05-30 15:16:25,602] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-05-30 15:16:27,188] INFO in app.routes.main: User requested home page
+[2025-05-30 15:16:27,206] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:16:27] "GET / HTTP/1.1" 200 -
+[2025-05-30 15:16:27,285] ERROR in app.routes.errors: That URL is not found
+[2025-05-30 15:16:27,294] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:16:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-05-30 15:16:30,842] INFO in app.routes.auth: Sign-in page requested
+[2025-05-30 15:16:30,846] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-30 15:16:30,848] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-05-30 15:16:30,848] INFO in sqlalchemy.engine.Engine: [generated in 0.00016s] {'pk_1': 1}
+[2025-05-30 15:16:30,853] INFO in app.utils: JWT tokens successfully created for user_id=1
+[2025-05-30 15:16:30,853] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:16:30] "[32mGET /auth/sign-in HTTP/1.1[0m" 302 -
+[2025-05-30 15:16:30,857] INFO in app.middlewares: Valid token: access granted
+[2025-05-30 15:16:30,858] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-05-30 15:16:30,858] INFO in sqlalchemy.engine.Engine: [cached since 0.01012s ago] {'pk_1': 1}
+[2025-05-30 15:16:30,860] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-05-30 15:16:30,860] INFO in sqlalchemy.engine.Engine: [generated in 0.00016s] {'param_1': 1}
+[2025-05-30 15:16:30,882] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:16:30] "GET /account/ HTTP/1.1" 200 -
+[2025-05-30 15:16:52,946] INFO in app.routes.qrcode: User entered selector for qr-code
+[2025-05-30 15:16:52,959] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:16:52] "GET /qrcode/ HTTP/1.1" 200 -
+[2025-05-30 15:17:09,294] INFO in app.routes.qrcode: User entered vcard qr-gen
+[2025-05-30 15:17:09,305] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:17:09] "GET /qrcode/vcard HTTP/1.1" 200 -
+[2025-05-30 15:17:11,468] INFO in app.routes.qrcode: User entered wifi qr-gen
+[2025-05-30 15:17:11,478] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:17:11] "GET /qrcode/wifi HTTP/1.1" 200 -
+[2025-05-30 15:17:15,416] INFO in app.routes.qrcode: User entered location/map qr-generator
+[2025-05-30 15:17:15,425] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:17:15] "GET /qrcode/mapgen HTTP/1.1" 200 -
+[2025-05-30 15:17:17,692] INFO in app.routes.qrcode: User entered phone-call qr-gen
+[2025-05-30 15:17:17,702] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:17:17] "GET /qrcode/phonecall HTTP/1.1" 200 -
+[2025-05-30 15:17:27,967] INFO in app.routes.qrcode: User entered phone-call qr-gen
+[2025-05-30 15:17:27,968] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:17:27] "GET /qrcode/phonecall HTTP/1.1" 200 -
+[2025-05-30 15:17:35,485] INFO in app.routes.qrcode: User entered email qr-gen
+[2025-05-30 15:17:35,496] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:17:35] "GET /qrcode/email HTTP/1.1" 200 -
+[2025-05-30 15:17:42,758] INFO in app.routes.qrcode: User entered sms qr-gen
+[2025-05-30 15:17:42,769] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:17:42] "GET /qrcode/textgen HTTP/1.1" 200 -
+[2025-05-30 15:17:47,048] INFO in app.routes.qrcode: User entered website url qr-generator
+[2025-05-30 15:17:47,062] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:17:47] "GET /qrcode/urlgen HTTP/1.1" 200 -
+[2025-05-30 15:18:19,576] INFO in app.routes.auth: User logged out
+[2025-05-30 15:18:19,577] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:18:19] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-05-30 15:18:19,579] INFO in app.routes.main: User requested home page
+[2025-05-30 15:18:19,579] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:18:19] "GET / HTTP/1.1" 200 -
+[2025-05-30 15:18:21,209] INFO in app.routes.auth: Sign-in page requested
+[2025-05-30 15:18:21,209] INFO in app.utils: Token not valid
+[2025-05-30 15:18:21,221] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:18:21] "GET /auth/sign-in HTTP/1.1" 200 -
