@@ -8,6 +8,7 @@ router = Blueprint("account", __name__)
 @router.get("/")
 @auth_required
 def account_page_handler(payload):
+
     user = session.query(User).get(payload["user_id"])
 
 

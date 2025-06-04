@@ -11,13 +11,13 @@ class User(Base):
     id = Column(Integer, autoincrement=True, nullable=False, primary_key=True)
     first_name = Column(String, nullable=False, unique=False)
     last_name = Column(String, nullable=False, unique=False)
-    phone_number = Column(String, unique=True, nullable=False)
+    phone_number = Column(String, unique=True, nullable=True)
     email = Column(String, unique=True, nullable=False)
-    password = Column(String, unique=False, nullable=False)
+    password = Column(String, unique=False, nullable=True)
 
     qrcodes = relationship("QrCode", back_populates="user")
 
-    def __init__(self, first_name, last_name, phone_number, email, password):
+    def __init__(self, first_name, last_name, email, password=None,  phone_number=None):
         self.first_name = first_name
         self.last_name = last_name
         self.phone_number = phone_number

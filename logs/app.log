@@ -7367,3 +7367,1054 @@ WHERE %(param_1)s = qrcodes.user_id
 [2025-05-30 15:18:21,209] INFO in app.routes.auth: Sign-in page requested
 [2025-05-30 15:18:21,209] INFO in app.utils: Token not valid
 [2025-05-30 15:18:21,221] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 15:18:21] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-30 16:15:44,854] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-05-30 16:15:44,854] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-05-30 16:15:45,778] INFO in app.routes.main: User requested home page
+[2025-05-30 16:15:45,779] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 16:15:45] "GET / HTTP/1.1" 200 -
+[2025-05-30 16:15:46,917] INFO in app.routes.auth: Sign-up page requested
+[2025-05-30 16:15:46,918] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 16:15:46] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-05-30 16:15:48,447] ERROR in app.routes.errors: That URL is not found
+[2025-05-30 16:15:48,449] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 16:15:48] "[33mGET /auth/google HTTP/1.1[0m" 404 -
+[2025-05-30 17:06:23,727] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-05-30 17:06:23,727] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-05-30 17:06:25,104] INFO in app.routes.main: User requested home page
+[2025-05-30 17:06:25,106] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 17:06:25] "GET / HTTP/1.1" 200 -
+[2025-05-30 17:06:27,112] INFO in app.routes.auth: Sign-in page requested
+[2025-05-30 17:06:27,112] INFO in app.utils: Token not valid
+[2025-05-30 17:06:27,113] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 17:06:27] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-05-30 17:06:36,777] INFO in app.routes.auth: Login attempt for email: test@gmail.com
+[2025-05-30 17:06:36,781] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-05-30 17:06:36,782] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-05-30 17:06:36,782] INFO in sqlalchemy.engine.Engine: [generated in 0.00014s] {'email_1': 'test@gmail.com', 'password_1': '638835294905c5a4cd7d31a2fe4b58c3631ede55568e1b1d178e02c5b1bcaa85'}
+[2025-05-30 17:06:36,787] INFO in app.utils: JWT tokens successfully created for user_id=1
+[2025-05-30 17:06:36,787] INFO in app.routes.auth: Login successful for user: test@gmail.com
+[2025-05-30 17:06:36,787] INFO in app.routes.auth: Redirecting to account
+[2025-05-30 17:06:36,788] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 17:06:36] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-05-30 17:06:36,790] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 17:06:36] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-05-30 17:06:36,792] INFO in app.middlewares: Valid token: access granted
+[2025-05-30 17:06:36,794] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-05-30 17:06:36,794] INFO in sqlalchemy.engine.Engine: [generated in 0.00015s] {'pk_1': 1}
+[2025-05-30 17:06:36,797] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-05-30 17:06:36,797] INFO in sqlalchemy.engine.Engine: [generated in 0.00014s] {'param_1': 1}
+[2025-05-30 17:06:36,809] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 17:06:36] "GET /account/ HTTP/1.1" 200 -
+[2025-05-30 17:06:39,015] INFO in app.routes.qrcode: User entered selector for qr-code
+[2025-05-30 17:06:39,017] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 17:06:39] "GET /qrcode/ HTTP/1.1" 200 -
+[2025-05-30 17:06:43,832] INFO in app.routes.qrcode: User entered website url qr-generator
+[2025-05-30 17:06:43,834] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 17:06:43] "GET /qrcode/urlgen HTTP/1.1" 200 -
+[2025-05-30 17:06:46,286] INFO in app.middlewares: Valid token: access granted
+[2025-05-30 17:06:46,287] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-05-30 17:06:46,287] INFO in sqlalchemy.engine.Engine: [cached since 9.493s ago] {'pk_1': 1}
+[2025-05-30 17:06:46,292] INFO in sqlalchemy.engine.Engine: INSERT INTO qrcodes (qr_type, pickle_obj, user_id) VALUES (%(qr_type)s, %(pickle_obj)s, %(user_id)s) RETURNING qrcodes.id
+[2025-05-30 17:06:46,292] INFO in sqlalchemy.engine.Engine: [generated in 0.00025s] {'qr_type': 'url', 'pickle_obj': <psycopg2.extensions.Binary object at 0x0000019DA29C1B90>, 'user_id': 1}
+[2025-05-30 17:06:46,305] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-05-30 17:06:46,317] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 17:06:46] "POST /qrcode/generate?type=url HTTP/1.1" 200 -
+[2025-05-30 17:06:50,463] INFO in app.routes.qrcode: User entered selector for qr-code
+[2025-05-30 17:06:50,463] INFO in werkzeug: 127.0.0.1 - - [30/May/2025 17:06:50] "GET /qrcode/ HTTP/1.1" 200 -
+[2025-06-02 15:06:14,208] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-02 15:06:14,208] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-02 15:06:15,748] INFO in app.routes.main: User requested home page
+[2025-06-02 15:06:15,804] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:06:15] "GET / HTTP/1.1" 200 -
+[2025-06-02 15:06:15,907] ERROR in app.routes.errors: That URL is not found
+[2025-06-02 15:06:15,916] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:06:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-06-02 15:06:18,198] INFO in app.routes.auth: Sign-up page requested
+[2025-06-02 15:06:18,220] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:06:18] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-02 15:08:26,781] ERROR in app.routes.errors: That URL is not found
+[2025-06-02 15:08:26,781] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:08:26] "[33mGET /auth/google HTTP/1.1[0m" 404 -
+[2025-06-02 15:08:56,851] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-02 15:08:56,853] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-02 15:08:57,914] INFO in app.routes.main: User requested home page
+[2025-06-02 15:08:57,916] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:08:57] "GET / HTTP/1.1" 200 -
+[2025-06-02 15:08:59,715] INFO in app.utils: Token not valid
+[2025-06-02 15:08:59,716] INFO in app.middlewares: Non-Valid token
+[2025-06-02 15:08:59,716] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:08:59] "[32mGET /account/ HTTP/1.1[0m" 302 -
+[2025-06-02 15:08:59,720] INFO in app.routes.auth: Sign-in page requested
+[2025-06-02 15:08:59,720] INFO in app.utils: Token not valid
+[2025-06-02 15:08:59,731] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:08:59] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-02 15:09:04,718] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:09:04] "GET /auth/oauth/google HTTP/1.1" 200 -
+[2025-06-02 15:23:54,542] INFO in app.routes.main: User requested home page
+[2025-06-02 15:23:54,542] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:23:54] "GET / HTTP/1.1" 200 -
+[2025-06-02 15:23:55,855] INFO in app.routes.auth: Sign-up page requested
+[2025-06-02 15:23:55,857] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:23:55] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-02 15:26:30,474] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-02 15:26:30,474] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-02 15:26:31,752] INFO in app.routes.main: User requested home page
+[2025-06-02 15:26:31,754] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:26:31] "GET / HTTP/1.1" 200 -
+[2025-06-02 15:26:33,296] INFO in app.routes.auth: Sign-up page requested
+[2025-06-02 15:26:33,298] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:26:33] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-02 15:28:35,435] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-02 15:28:35,436] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-02 15:28:36,495] INFO in app.routes.main: User requested home page
+[2025-06-02 15:28:36,497] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:28:36] "GET / HTTP/1.1" 200 -
+[2025-06-02 15:28:37,430] INFO in app.routes.auth: Sign-up page requested
+[2025-06-02 15:28:37,431] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:28:37] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-02 15:28:46,113] ERROR in app: Exception on /auth/oauth/google [GET]
+Traceback (most recent call last):
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\QrCodeGen\app\routes\auth.py", line 32, in google_oath_handler
+    return render_template()
+TypeError: render_template() missing 1 required positional argument: 'template_name_or_list'
+[2025-06-02 15:28:46,124] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:28:46] "[35m[1mGET /auth/oauth/google?code=4/0AUJR-x6DQrOYZEDKghhMnH_wwzCratNMHbmInmT8cCJ4weKskBJKiykLghl4f2FgnkFfvw&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email+openid&authuser=0&prompt=consent HTTP/1.1[0m" 500 -
+[2025-06-02 15:29:35,395] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-02 15:29:35,395] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-02 15:29:45,149] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:29:45] "GET /auth/oauth/google?code=4/0AUJR-x6DQrOYZEDKghhMnH_wwzCratNMHbmInmT8cCJ4weKskBJKiykLghl4f2FgnkFfvw&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email+openid&authuser=0&prompt=consent HTTP/1.1" 200 -
+[2025-06-02 15:32:26,719] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-02 15:32:26,719] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-02 15:32:27,803] INFO in app.routes.main: User requested home page
+[2025-06-02 15:32:27,805] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:32:27] "GET / HTTP/1.1" 200 -
+[2025-06-02 15:32:29,368] INFO in app.routes.auth: Sign-up page requested
+[2025-06-02 15:32:29,369] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:32:29] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-02 15:32:34,349] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:32:34] "GET /auth/oauth/google?code=4/0AUJR-x5KAlPkmn0fl5JMahleItTEg3JFjOfEwCtlqmygZchxyBwCtBIPksKuVrBcDjVU2A&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email+openid&authuser=0&prompt=consent HTTP/1.1" 200 -
+[2025-06-02 15:39:10,430] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-02 15:39:10,430] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-02 15:39:11,598] INFO in app.routes.main: User requested home page
+[2025-06-02 15:39:11,600] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:39:11] "GET / HTTP/1.1" 200 -
+[2025-06-02 15:39:12,496] INFO in app.routes.auth: Sign-up page requested
+[2025-06-02 15:39:12,498] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:39:12] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-02 15:39:17,024] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:39:17] "GET /auth/oauth/google?code=4/0AUJR-x570D_51AnXlaUDgMLmdgtFaUUCcrx4VetSSRt-_9QwOI1gtfgVngM30WVTEGfEiA&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email+openid&authuser=0&prompt=consent HTTP/1.1" 200 -
+[2025-06-02 15:40:15,601] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-02 15:40:15,602] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-02 15:40:16,371] INFO in app.routes.main: User requested home page
+[2025-06-02 15:40:16,373] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:40:16] "GET / HTTP/1.1" 200 -
+[2025-06-02 15:40:17,233] INFO in app.routes.auth: Sign-up page requested
+[2025-06-02 15:40:17,234] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:40:17] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-02 15:40:21,742] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:40:21] "GET /auth/oauth/google?code=4/0AUJR-x7oYjXsfUELtcZPJuWoyQL2dYhZg2cM1FNGTs_us-gxz16Npa5ct1ZxupcBEQL5lg&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email+openid&authuser=0&prompt=consent HTTP/1.1" 200 -
+[2025-06-02 15:41:25,338] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-02 15:41:25,338] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-02 15:41:26,214] INFO in app.routes.main: User requested home page
+[2025-06-02 15:41:26,215] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:41:26] "GET / HTTP/1.1" 200 -
+[2025-06-02 15:41:27,093] INFO in app.routes.auth: Sign-up page requested
+[2025-06-02 15:41:27,095] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:41:27] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-02 15:41:29,960] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:41:29] "GET /auth/oauth/google?code=4/0AUJR-x6ePlKx28YS869CBa7rl6rYNclF941FP1yfT3TiT3V7R4ZwdVhBAChirOCokH8A1Q&scope=email+profile+openid+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&authuser=0&prompt=none HTTP/1.1" 200 -
+[2025-06-02 15:45:34,407] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-02 15:45:34,407] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-02 15:45:35,991] INFO in app.routes.main: User requested home page
+[2025-06-02 15:45:35,993] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:45:35] "GET / HTTP/1.1" 200 -
+[2025-06-02 15:45:36,963] INFO in app.routes.auth: Sign-up page requested
+[2025-06-02 15:45:36,965] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:45:36] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-02 15:45:40,683] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:45:40] "GET /auth/oauth/google?code=4/0AUJR-x6lisvJ_Ka9up6Bjz5wv20D7NlyG0waeg_1iPeMWDhuxPjfD6mbT8SQjCiwH2SQlA&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile+openid&authuser=0&prompt=none HTTP/1.1" 200 -
+[2025-06-02 15:52:13,087] INFO in app.routes.auth: Sign-in page requested
+[2025-06-02 15:52:13,087] INFO in app.utils: Token not valid
+[2025-06-02 15:52:13,089] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:13] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-02 15:52:20,959] INFO in app.routes.auth: Login attempt for email: test@gmail.com
+[2025-06-02 15:52:20,962] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-06-02 15:52:20,964] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-06-02 15:52:20,964] INFO in sqlalchemy.engine.Engine: [generated in 0.00016s] {'email_1': 'test@gmail.com', 'password_1': '638835294905c5a4cd7d31a2fe4b58c3631ede55568e1b1d178e02c5b1bcaa85'}
+[2025-06-02 15:52:20,975] INFO in app.utils: JWT tokens successfully created for user_id=1
+[2025-06-02 15:52:20,975] INFO in app.routes.auth: Login successful for user: test@gmail.com
+[2025-06-02 15:52:20,975] INFO in app.routes.auth: Redirecting to account
+[2025-06-02 15:52:20,975] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:20] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-06-02 15:52:20,977] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:20] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-06-02 15:52:20,980] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:20,981] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:20,981] INFO in sqlalchemy.engine.Engine: [generated in 0.00014s] {'pk_1': 1}
+[2025-06-02 15:52:20,984] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:20,984] INFO in sqlalchemy.engine.Engine: [generated in 0.00021s] {'param_1': 1}
+[2025-06-02 15:52:21,010] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:21] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:27,206] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:27,207] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:27,207] INFO in sqlalchemy.engine.Engine: [cached since 6.226s ago] {'pk_1': 1}
+[2025-06-02 15:52:27,209] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:27,209] INFO in sqlalchemy.engine.Engine: [cached since 6.226s ago] {'param_1': 1}
+[2025-06-02 15:52:27,220] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:27] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:28,779] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:28,780] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:28,780] INFO in sqlalchemy.engine.Engine: [cached since 7.799s ago] {'pk_1': 1}
+[2025-06-02 15:52:28,782] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:28,782] INFO in sqlalchemy.engine.Engine: [cached since 7.798s ago] {'param_1': 1}
+[2025-06-02 15:52:28,792] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:28] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:32,034] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:32,035] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:32,035] INFO in sqlalchemy.engine.Engine: [cached since 11.05s ago] {'pk_1': 1}
+[2025-06-02 15:52:32,037] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:32,037] INFO in sqlalchemy.engine.Engine: [cached since 11.05s ago] {'param_1': 1}
+[2025-06-02 15:52:32,046] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:32] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:33,210] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:33,211] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:33,211] INFO in sqlalchemy.engine.Engine: [cached since 12.23s ago] {'pk_1': 1}
+[2025-06-02 15:52:33,212] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:33,213] INFO in sqlalchemy.engine.Engine: [cached since 12.23s ago] {'param_1': 1}
+[2025-06-02 15:52:33,222] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:33] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:34,390] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:34,391] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:34,391] INFO in sqlalchemy.engine.Engine: [cached since 13.41s ago] {'pk_1': 1}
+[2025-06-02 15:52:34,393] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:34,393] INFO in sqlalchemy.engine.Engine: [cached since 13.41s ago] {'param_1': 1}
+[2025-06-02 15:52:34,403] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:34] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:35,514] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:35,515] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:35,515] INFO in sqlalchemy.engine.Engine: [cached since 14.53s ago] {'pk_1': 1}
+[2025-06-02 15:52:35,516] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:35,516] INFO in sqlalchemy.engine.Engine: [cached since 14.53s ago] {'param_1': 1}
+[2025-06-02 15:52:35,526] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:35] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:36,159] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:36,159] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:36,160] INFO in sqlalchemy.engine.Engine: [cached since 15.18s ago] {'pk_1': 1}
+[2025-06-02 15:52:36,161] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:36,161] INFO in sqlalchemy.engine.Engine: [cached since 15.18s ago] {'param_1': 1}
+[2025-06-02 15:52:36,171] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:36] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:36,618] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:36,618] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:36,618] INFO in sqlalchemy.engine.Engine: [cached since 15.64s ago] {'pk_1': 1}
+[2025-06-02 15:52:36,620] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:36,620] INFO in sqlalchemy.engine.Engine: [cached since 15.64s ago] {'param_1': 1}
+[2025-06-02 15:52:36,630] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:36] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:38,361] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:38,361] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:38,361] INFO in sqlalchemy.engine.Engine: [cached since 17.38s ago] {'pk_1': 1}
+[2025-06-02 15:52:38,363] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:38,363] INFO in sqlalchemy.engine.Engine: [cached since 17.38s ago] {'param_1': 1}
+[2025-06-02 15:52:38,373] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:38] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:39,415] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:39,415] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:39,416] INFO in sqlalchemy.engine.Engine: [cached since 18.43s ago] {'pk_1': 1}
+[2025-06-02 15:52:39,417] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:39,418] INFO in sqlalchemy.engine.Engine: [cached since 18.43s ago] {'param_1': 1}
+[2025-06-02 15:52:39,427] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:39] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:39,886] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:39,886] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:39,886] INFO in sqlalchemy.engine.Engine: [cached since 18.91s ago] {'pk_1': 1}
+[2025-06-02 15:52:39,888] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:39,888] INFO in sqlalchemy.engine.Engine: [cached since 18.9s ago] {'param_1': 1}
+[2025-06-02 15:52:39,897] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:39] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:40,275] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:40,276] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:40,276] INFO in sqlalchemy.engine.Engine: [cached since 19.3s ago] {'pk_1': 1}
+[2025-06-02 15:52:40,278] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:40,278] INFO in sqlalchemy.engine.Engine: [cached since 19.29s ago] {'param_1': 1}
+[2025-06-02 15:52:40,288] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:40] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:40,714] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:40,715] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:40,715] INFO in sqlalchemy.engine.Engine: [cached since 19.73s ago] {'pk_1': 1}
+[2025-06-02 15:52:40,716] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:40,716] INFO in sqlalchemy.engine.Engine: [cached since 19.73s ago] {'param_1': 1}
+[2025-06-02 15:52:40,726] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:40] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:41,258] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:41,259] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:41,259] INFO in sqlalchemy.engine.Engine: [cached since 20.28s ago] {'pk_1': 1}
+[2025-06-02 15:52:41,261] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:41,261] INFO in sqlalchemy.engine.Engine: [cached since 20.28s ago] {'param_1': 1}
+[2025-06-02 15:52:41,271] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:41] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:41,682] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:41,683] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:41,683] INFO in sqlalchemy.engine.Engine: [cached since 20.7s ago] {'pk_1': 1}
+[2025-06-02 15:52:41,685] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:41,685] INFO in sqlalchemy.engine.Engine: [cached since 20.7s ago] {'param_1': 1}
+[2025-06-02 15:52:41,694] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:41] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:42,002] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:42,002] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:42,003] INFO in sqlalchemy.engine.Engine: [cached since 21.02s ago] {'pk_1': 1}
+[2025-06-02 15:52:42,004] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:42,004] INFO in sqlalchemy.engine.Engine: [cached since 21.02s ago] {'param_1': 1}
+[2025-06-02 15:52:42,014] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:42] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:42,438] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:42,439] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:42,439] INFO in sqlalchemy.engine.Engine: [cached since 21.46s ago] {'pk_1': 1}
+[2025-06-02 15:52:42,441] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:42,441] INFO in sqlalchemy.engine.Engine: [cached since 21.46s ago] {'param_1': 1}
+[2025-06-02 15:52:42,452] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:42] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:42,819] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:42,819] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:42,820] INFO in sqlalchemy.engine.Engine: [cached since 21.84s ago] {'pk_1': 1}
+[2025-06-02 15:52:42,821] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:42,821] INFO in sqlalchemy.engine.Engine: [cached since 21.84s ago] {'param_1': 1}
+[2025-06-02 15:52:42,831] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:42] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:43,347] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:43,348] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:43,348] INFO in sqlalchemy.engine.Engine: [cached since 22.37s ago] {'pk_1': 1}
+[2025-06-02 15:52:43,350] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:43,350] INFO in sqlalchemy.engine.Engine: [cached since 22.37s ago] {'param_1': 1}
+[2025-06-02 15:52:43,360] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:43] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:43,728] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:43,728] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:43,729] INFO in sqlalchemy.engine.Engine: [cached since 22.75s ago] {'pk_1': 1}
+[2025-06-02 15:52:43,730] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:43,731] INFO in sqlalchemy.engine.Engine: [cached since 22.75s ago] {'param_1': 1}
+[2025-06-02 15:52:43,740] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:43] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:46,973] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:46,973] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:46,974] INFO in sqlalchemy.engine.Engine: [cached since 25.99s ago] {'pk_1': 1}
+[2025-06-02 15:52:46,975] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:46,975] INFO in sqlalchemy.engine.Engine: [cached since 25.99s ago] {'param_1': 1}
+[2025-06-02 15:52:46,985] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:46] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:47,551] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:47,552] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:47,552] INFO in sqlalchemy.engine.Engine: [cached since 26.57s ago] {'pk_1': 1}
+[2025-06-02 15:52:47,554] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:47,554] INFO in sqlalchemy.engine.Engine: [cached since 26.57s ago] {'param_1': 1}
+[2025-06-02 15:52:47,564] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:47] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:48,057] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:48,058] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:48,058] INFO in sqlalchemy.engine.Engine: [cached since 27.08s ago] {'pk_1': 1}
+[2025-06-02 15:52:48,060] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:48,060] INFO in sqlalchemy.engine.Engine: [cached since 27.08s ago] {'param_1': 1}
+[2025-06-02 15:52:48,070] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:48] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:48,531] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:48,532] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:48,532] INFO in sqlalchemy.engine.Engine: [cached since 27.55s ago] {'pk_1': 1}
+[2025-06-02 15:52:48,535] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:48,535] INFO in sqlalchemy.engine.Engine: [cached since 27.55s ago] {'param_1': 1}
+[2025-06-02 15:52:48,545] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:48] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:50,564] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:50,564] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:50,565] INFO in sqlalchemy.engine.Engine: [cached since 29.58s ago] {'pk_1': 1}
+[2025-06-02 15:52:50,566] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:50,566] INFO in sqlalchemy.engine.Engine: [cached since 29.58s ago] {'param_1': 1}
+[2025-06-02 15:52:50,576] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:50] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:51,438] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:51,439] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:51,439] INFO in sqlalchemy.engine.Engine: [cached since 30.46s ago] {'pk_1': 1}
+[2025-06-02 15:52:51,441] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:51,442] INFO in sqlalchemy.engine.Engine: [cached since 30.46s ago] {'param_1': 1}
+[2025-06-02 15:52:51,451] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:51] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:51,977] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:51,977] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:51,977] INFO in sqlalchemy.engine.Engine: [cached since 31s ago] {'pk_1': 1}
+[2025-06-02 15:52:51,979] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:51,979] INFO in sqlalchemy.engine.Engine: [cached since 31s ago] {'param_1': 1}
+[2025-06-02 15:52:51,989] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:51] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:55,490] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:55,491] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:55,491] INFO in sqlalchemy.engine.Engine: [cached since 34.51s ago] {'pk_1': 1}
+[2025-06-02 15:52:55,493] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:55,493] INFO in sqlalchemy.engine.Engine: [cached since 34.51s ago] {'param_1': 1}
+[2025-06-02 15:52:55,502] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:55] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:56,106] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:56,106] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:56,106] INFO in sqlalchemy.engine.Engine: [cached since 35.13s ago] {'pk_1': 1}
+[2025-06-02 15:52:56,108] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:56,108] INFO in sqlalchemy.engine.Engine: [cached since 35.12s ago] {'param_1': 1}
+[2025-06-02 15:52:56,118] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:56] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:56,949] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:56,950] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:56,950] INFO in sqlalchemy.engine.Engine: [cached since 35.97s ago] {'pk_1': 1}
+[2025-06-02 15:52:56,951] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:56,951] INFO in sqlalchemy.engine.Engine: [cached since 35.97s ago] {'param_1': 1}
+[2025-06-02 15:52:56,962] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:56] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:57,742] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:57,743] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:57,743] INFO in sqlalchemy.engine.Engine: [cached since 36.76s ago] {'pk_1': 1}
+[2025-06-02 15:52:57,745] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:57,745] INFO in sqlalchemy.engine.Engine: [cached since 36.76s ago] {'param_1': 1}
+[2025-06-02 15:52:57,755] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:57] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:58,030] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:58,030] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:58,030] INFO in sqlalchemy.engine.Engine: [cached since 37.05s ago] {'pk_1': 1}
+[2025-06-02 15:52:58,032] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:58,032] INFO in sqlalchemy.engine.Engine: [cached since 37.05s ago] {'param_1': 1}
+[2025-06-02 15:52:58,042] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:58] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:58,219] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:58,220] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:58,220] INFO in sqlalchemy.engine.Engine: [cached since 37.24s ago] {'pk_1': 1}
+[2025-06-02 15:52:58,222] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:58,222] INFO in sqlalchemy.engine.Engine: [cached since 37.24s ago] {'param_1': 1}
+[2025-06-02 15:52:58,231] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:58] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:58,376] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:58,377] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:58,377] INFO in sqlalchemy.engine.Engine: [cached since 37.4s ago] {'pk_1': 1}
+[2025-06-02 15:52:58,379] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:58,379] INFO in sqlalchemy.engine.Engine: [cached since 37.4s ago] {'param_1': 1}
+[2025-06-02 15:52:58,388] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:58] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:58,564] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:58,564] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:58,565] INFO in sqlalchemy.engine.Engine: [cached since 37.58s ago] {'pk_1': 1}
+[2025-06-02 15:52:58,567] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:58,567] INFO in sqlalchemy.engine.Engine: [cached since 37.58s ago] {'param_1': 1}
+[2025-06-02 15:52:58,576] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:58] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:58,761] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:58,761] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:58,761] INFO in sqlalchemy.engine.Engine: [cached since 37.78s ago] {'pk_1': 1}
+[2025-06-02 15:52:58,763] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:58,764] INFO in sqlalchemy.engine.Engine: [cached since 37.78s ago] {'param_1': 1}
+[2025-06-02 15:52:58,773] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:58] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:58,922] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:58,922] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:58,923] INFO in sqlalchemy.engine.Engine: [cached since 37.94s ago] {'pk_1': 1}
+[2025-06-02 15:52:58,924] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:58,924] INFO in sqlalchemy.engine.Engine: [cached since 37.94s ago] {'param_1': 1}
+[2025-06-02 15:52:58,934] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:58] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:59,086] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:59,087] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:59,087] INFO in sqlalchemy.engine.Engine: [cached since 38.11s ago] {'pk_1': 1}
+[2025-06-02 15:52:59,089] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:59,089] INFO in sqlalchemy.engine.Engine: [cached since 38.11s ago] {'param_1': 1}
+[2025-06-02 15:52:59,099] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:59] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:59,266] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:59,266] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:59,267] INFO in sqlalchemy.engine.Engine: [cached since 38.29s ago] {'pk_1': 1}
+[2025-06-02 15:52:59,268] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:59,268] INFO in sqlalchemy.engine.Engine: [cached since 38.28s ago] {'param_1': 1}
+[2025-06-02 15:52:59,278] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:59] "GET /account/ HTTP/1.1" 200 -
+[2025-06-02 15:52:59,437] INFO in app.middlewares: Valid token: access granted
+[2025-06-02 15:52:59,529] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-02 15:52:59,530] INFO in sqlalchemy.engine.Engine: [cached since 38.55s ago] {'pk_1': 1}
+[2025-06-02 15:52:59,531] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-02 15:52:59,532] INFO in sqlalchemy.engine.Engine: [cached since 38.55s ago] {'param_1': 1}
+[2025-06-02 15:52:59,542] INFO in werkzeug: 127.0.0.1 - - [02/Jun/2025 15:52:59] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 15:34:39,045] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-04 15:34:39,046] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-04 15:34:40,697] INFO in app.routes.main: User requested home page
+[2025-06-04 15:34:40,707] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:34:40] "GET / HTTP/1.1" 200 -
+[2025-06-04 15:34:40,788] ERROR in app.routes.errors: That URL is not found
+[2025-06-04 15:34:40,797] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:34:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-06-04 15:34:45,431] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 15:34:45,431] INFO in app.utils: Token not valid
+[2025-06-04 15:34:45,431] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 15:34:45,441] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:34:45] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 15:34:50,135] ERROR in app.routes.errors: That URL is not found
+[2025-06-04 15:34:50,135] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:34:50] "[33mGET /auth/google HTTP/1.1[0m" 404 -
+[2025-06-04 15:36:08,442] INFO in app.routes.auth: Received sign-up submission for: test@gmail.com
+[2025-06-04 15:36:08,446] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-06-04 15:36:08,448] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s
+[2025-06-04 15:36:08,448] INFO in sqlalchemy.engine.Engine: [generated in 0.00024s] {'email_1': 'test@gmail.com', 'password_1': '638835294905c5a4cd7d31a2fe4b58c3631ede55568e1b1d178e02c5b1bcaa85'}
+[2025-06-04 15:36:08,453] INFO in app.utils: JWT tokens successfully created for user_id=1
+[2025-06-04 15:36:08,453] INFO in app.routes.auth: Login successful for user: test@gmail.com
+[2025-06-04 15:36:08,453] INFO in app.routes.auth: Redirecting to account
+[2025-06-04 15:36:08,454] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:36:08] "[32mPOST /auth/sign-in/submit HTTP/1.1[0m" 302 -
+[2025-06-04 15:36:08,456] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:36:08] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-06-04 15:36:08,458] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 15:36:08,459] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 15:36:08,459] INFO in sqlalchemy.engine.Engine: [generated in 0.00013s] {'pk_1': 1}
+[2025-06-04 15:36:08,461] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-04 15:36:08,461] INFO in sqlalchemy.engine.Engine: [generated in 0.00013s] {'param_1': 1}
+[2025-06-04 15:36:08,484] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:36:08] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 15:36:14,790] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 15:36:14,791] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 15:36:14,791] INFO in sqlalchemy.engine.Engine: [cached since 6.333s ago] {'pk_1': 1}
+[2025-06-04 15:36:14,793] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-04 15:36:14,794] INFO in sqlalchemy.engine.Engine: [cached since 6.332s ago] {'param_1': 1}
+[2025-06-04 15:36:14,803] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:36:14] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 15:36:20,534] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 15:36:20,535] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 15:36:20,535] INFO in sqlalchemy.engine.Engine: [cached since 12.08s ago] {'pk_1': 1}
+[2025-06-04 15:36:20,537] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-04 15:36:20,537] INFO in sqlalchemy.engine.Engine: [cached since 12.08s ago] {'param_1': 1}
+[2025-06-04 15:36:20,546] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:36:20] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 15:36:20,996] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 15:36:20,997] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 15:36:20,997] INFO in sqlalchemy.engine.Engine: [cached since 12.54s ago] {'pk_1': 1}
+[2025-06-04 15:36:20,999] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-04 15:36:20,999] INFO in sqlalchemy.engine.Engine: [cached since 12.54s ago] {'param_1': 1}
+[2025-06-04 15:36:21,008] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:36:21] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 15:41:12,169] INFO in app.routes.auth: Logout requested. Clearing access and refresh tokens.
+[2025-06-04 15:41:12,169] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:41:12] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-06-04 15:41:12,172] INFO in app.routes.main: User requested home page
+[2025-06-04 15:41:12,172] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:41:12] "GET / HTTP/1.1" 200 -
+[2025-06-04 15:41:13,191] INFO in app.routes.auth: Sign-up page requested
+[2025-06-04 15:41:13,208] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:41:13] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-04 15:41:17,127] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:41:17] "GET /auth/oauth/google?code=4/0AUJR-x6vkID6NtLPHve3GWWv3L8lWquarULML_27HSmuF2aCOIVybH4Yx4wUUPHBKtY4zg&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile+openid&authuser=0&prompt=none HTTP/1.1" 200 -
+[2025-06-04 15:56:49,770] INFO in app.routes.auth: Logout requested. Clearing access and refresh tokens.
+[2025-06-04 15:56:49,770] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:56:49] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-06-04 15:56:49,772] INFO in app.routes.main: User requested home page
+[2025-06-04 15:56:49,772] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:56:49] "GET / HTTP/1.1" 200 -
+[2025-06-04 15:56:51,140] INFO in app.routes.auth: Sign-up page requested
+[2025-06-04 15:56:51,140] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:56:51] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-04 15:56:54,982] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 15:56:54] "GET /auth/oauth/google?code=4/0AUJR-x6wvVtbVZdxWdm5K-w3pXPSTrWmSik5qSihkXB0HVGDxT_VVGNUcXyEnLT6ZHRBOA&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+openid+https://www.googleapis.com/auth/userinfo.email&authuser=0&prompt=none HTTP/1.1" 200 -
+[2025-06-04 16:19:34,584] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-04 16:19:34,584] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-04 16:19:36,216] INFO in app.routes.main: User requested home page
+[2025-06-04 16:19:36,218] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:19:36] "GET / HTTP/1.1" 200 -
+[2025-06-04 16:19:37,703] INFO in app.routes.auth: Sign-up page requested
+[2025-06-04 16:19:37,705] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:19:37] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-04 16:19:41,679] INFO in app.routes.auth: Received OAuth code, exchanging for tokens.
+[2025-06-04 16:19:41,956] INFO in app.routes.auth: Google user info retrieved: danil.vexler123@gmail.com
+[2025-06-04 16:19:41,958] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-06-04 16:19:41,960] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+[2025-06-04 16:19:41,960] INFO in sqlalchemy.engine.Engine: [generated in 0.00010s] {'email_1': 'danil.vexler123@gmail.com', 'param_1': 1}
+[2025-06-04 16:19:41,962] INFO in sqlalchemy.engine.Engine: INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone_number)s, %(email)s, %(password)s) RETURNING users.id
+[2025-06-04 16:19:41,963] INFO in sqlalchemy.engine.Engine: [generated in 0.00010s] {'first_name': 'Danylo', 'last_name': 'Veksler', 'phone_number': None, 'email': 'danil.vexler123@gmail.com', 'password': None}
+[2025-06-04 16:19:41,963] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-06-04 16:19:41,967] INFO in app.routes.auth: Successfully created user account for: danil.vexler123@gmail.com
+[2025-06-04 16:19:41,967] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-06-04 16:19:41,967] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 16:19:41,968] INFO in sqlalchemy.engine.Engine: [generated in 0.00008s] {'pk_1': 1}
+[2025-06-04 16:19:41,969] INFO in app.utils: JWT tokens successfully created for user_id=1
+[2025-06-04 16:19:41,969] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:19:41] "[32mGET /auth/oauth/google?code=4/0AUJR-x5rSIPYcwgmUbIg-_QTsXlGrBV4R-81ue7QZz7DoOMnlTiNfMK98TiQQuB31KY6kQ&scope=email+profile+openid+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&authuser=0&prompt=none HTTP/1.1[0m" 302 -
+[2025-06-04 16:19:41,971] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:19:41] "[32mGET /account HTTP/1.1[0m" 308 -
+[2025-06-04 16:19:41,973] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 16:19:41,974] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 16:19:41,974] INFO in sqlalchemy.engine.Engine: [generated in 0.00012s] {'pk_1': 1}
+[2025-06-04 16:19:41,976] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-04 16:19:41,976] INFO in sqlalchemy.engine.Engine: [generated in 0.00010s] {'param_1': 1}
+[2025-06-04 16:19:41,979] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:19:41] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 16:21:05,921] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 16:21:05,922] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 16:21:05,922] INFO in sqlalchemy.engine.Engine: [cached since 83.95s ago] {'pk_1': 1}
+[2025-06-04 16:21:05,923] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-04 16:21:05,924] INFO in sqlalchemy.engine.Engine: [cached since 83.95s ago] {'param_1': 1}
+[2025-06-04 16:21:05,925] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:21:05] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 16:21:09,415] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:21:09,416] INFO in app.routes.auth: Valid refresh token found for user_id=1, auto-signing in.
+[2025-06-04 16:21:09,416] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 16:21:09,416] INFO in sqlalchemy.engine.Engine: [cached since 87.44s ago] {'pk_1': 1}
+[2025-06-04 16:21:09,417] INFO in app.utils: JWT tokens successfully created for user_id=1
+[2025-06-04 16:21:09,418] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:21:09] "[32mGET /auth/sign-in HTTP/1.1[0m" 302 -
+[2025-06-04 16:21:09,420] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 16:21:09,421] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 16:21:09,421] INFO in sqlalchemy.engine.Engine: [cached since 87.45s ago] {'pk_1': 1}
+[2025-06-04 16:21:09,422] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-04 16:21:09,422] INFO in sqlalchemy.engine.Engine: [cached since 87.45s ago] {'param_1': 1}
+[2025-06-04 16:21:09,423] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:21:09] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 16:21:14,771] INFO in app.routes.qrcode: User entered selector for qr-code
+[2025-06-04 16:21:14,781] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:21:14] "GET /qrcode/ HTTP/1.1" 200 -
+[2025-06-04 16:21:19,334] INFO in app.routes.qrcode: User entered website url qr-generator
+[2025-06-04 16:21:19,346] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:21:19] "GET /qrcode/urlgen HTTP/1.1" 200 -
+[2025-06-04 16:21:21,898] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 16:21:21,899] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 16:21:21,899] INFO in sqlalchemy.engine.Engine: [cached since 99.93s ago] {'pk_1': 1}
+[2025-06-04 16:21:21,903] INFO in sqlalchemy.engine.Engine: INSERT INTO qrcodes (qr_type, pickle_obj, user_id) VALUES (%(qr_type)s, %(pickle_obj)s, %(user_id)s) RETURNING qrcodes.id
+[2025-06-04 16:21:21,904] INFO in sqlalchemy.engine.Engine: [generated in 0.00024s] {'qr_type': 'url', 'pickle_obj': <psycopg2.extensions.Binary object at 0x00000277046720A0>, 'user_id': 1}
+[2025-06-04 16:21:21,906] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-06-04 16:21:21,917] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:21:21] "POST /qrcode/generate?type=url HTTP/1.1" 200 -
+[2025-06-04 16:21:24,885] INFO in app.routes.qrcode: User entered selector for qr-code
+[2025-06-04 16:21:24,885] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:21:24] "GET /qrcode/ HTTP/1.1" 200 -
+[2025-06-04 16:22:16,331] INFO in app.routes.auth: Logout requested. Clearing access and refresh tokens.
+[2025-06-04 16:22:16,331] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:22:16] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+[2025-06-04 16:22:16,333] INFO in app.routes.main: User requested home page
+[2025-06-04 16:22:16,334] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:22:16] "GET / HTTP/1.1" 200 -
+[2025-06-04 16:22:17,951] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:22:17,951] INFO in app.utils: Token not valid
+[2025-06-04 16:22:17,951] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:22:17,952] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:22:17] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:22:20,175] INFO in app.routes.auth: Sign-up page requested
+[2025-06-04 16:22:20,175] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:22:20] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-04 16:22:25,046] INFO in app.routes.auth: Received OAuth code, exchanging for tokens.
+[2025-06-04 16:22:25,337] INFO in app.routes.auth: Google user info retrieved: danil.vexler123@gmail.com
+[2025-06-04 16:22:25,338] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-06-04 16:22:25,338] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+[2025-06-04 16:22:25,339] INFO in sqlalchemy.engine.Engine: [cached since 163.4s ago] {'email_1': 'danil.vexler123@gmail.com', 'param_1': 1}
+[2025-06-04 16:22:25,343] ERROR in app: Exception on /auth/oauth/google [GET]
+Traceback (most recent call last):
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 1212, in make_response
+    raise TypeError(
+    ...<3 lines>...
+    )
+TypeError: The view function for 'auth.google_oauth_handler' did not return a valid response. The function either returned None or ended without a return statement.
+[2025-06-04 16:22:25,356] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:22:25] "[35m[1mGET /auth/oauth/google?code=4/0AUJR-x62MOrla_n7EDcvuW5TfjrufsbNHRua-7K7MdcwCEil-oXSqddtpD8W4amYVP4_OQ&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+openid+https://www.googleapis.com/auth/userinfo.email&authuser=0&prompt=none HTTP/1.1[0m" 500 -
+[2025-06-04 16:25:09,431] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-04 16:25:09,431] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-04 16:25:11,007] INFO in app.routes.main: User requested home page
+[2025-06-04 16:25:11,008] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:25:11] "GET / HTTP/1.1" 200 -
+[2025-06-04 16:25:12,982] INFO in app.routes.auth: Sign-up page requested
+[2025-06-04 16:25:12,984] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:25:12] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-04 16:25:16,889] INFO in app.routes.auth: Received OAuth code, exchanging for tokens.
+[2025-06-04 16:25:17,163] INFO in app.routes.auth: Google user info retrieved: danil.vexler123@gmail.com
+[2025-06-04 16:25:17,167] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-06-04 16:25:17,168] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+[2025-06-04 16:25:17,168] INFO in sqlalchemy.engine.Engine: [generated in 0.00021s] {'email_1': 'danil.vexler123@gmail.com', 'param_1': 1}
+[2025-06-04 16:25:17,170] INFO in app.routes.auth: User already exists: danil.vexler123@gmail.com
+[2025-06-04 16:25:17,171] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:25:17] "[32mGET /auth/oauth/google?code=4/0AUJR-x4q00s1BYKIt7c71lrlrCYr0eOnPD1SM5f34EjJ4akaGfuIZWXhH370ec2FMtoSuQ&scope=email+profile+openid+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&authuser=0&prompt=none HTTP/1.1[0m" 302 -
+[2025-06-04 16:25:17,173] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:25:17,173] INFO in app.utils: Token not valid
+[2025-06-04 16:25:17,173] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:25:17,174] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:25:17] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:25:28,627] ERROR in app.routes.errors: That URL is not found
+[2025-06-04 16:25:28,629] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:25:28] "[33mGET /auth/google HTTP/1.1[0m" 404 -
+[2025-06-04 16:33:42,440] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-04 16:33:42,440] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-04 16:33:44,254] INFO in app.routes.main: User requested home page
+[2025-06-04 16:33:44,255] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:33:44] "GET / HTTP/1.1" 200 -
+[2025-06-04 16:33:46,138] INFO in app.routes.auth: Sign-up page requested
+[2025-06-04 16:33:46,138] ERROR in app: Exception on /auth/sign-up [GET]
+Traceback (most recent call last):
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\QrCodeGen\app\routes\auth.py", line 116, in sign_up_handler
+    return render_template("signup.html", google_link=google_auth_url)
+                                                      ^^^^^^^^^^^^^^^
+NameError: name 'google_auth_url' is not defined
+[2025-06-04 16:33:46,141] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:33:46] "[35m[1mGET /auth/sign-up HTTP/1.1[0m" 500 -
+[2025-06-04 16:34:24,651] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-04 16:34:24,651] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-04 16:34:25,788] INFO in app.routes.main: User requested home page
+[2025-06-04 16:34:25,790] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:34:25] "GET / HTTP/1.1" 200 -
+[2025-06-04 16:34:27,420] INFO in app.routes.auth: Sign-up page requested
+[2025-06-04 16:34:27,421] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:34:27] "GET /auth/sign-up HTTP/1.1" 200 -
+[2025-06-04 16:34:31,207] INFO in app.routes.auth: Received OAuth code, exchanging for tokens.
+[2025-06-04 16:34:31,505] INFO in app.routes.auth: Google user info retrieved: danil.vexler123@gmail.com
+[2025-06-04 16:34:31,510] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-06-04 16:34:31,512] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+[2025-06-04 16:34:31,512] INFO in sqlalchemy.engine.Engine: [generated in 0.00016s] {'email_1': 'danil.vexler123@gmail.com', 'param_1': 1}
+[2025-06-04 16:34:31,515] INFO in app.routes.auth: User already exists: danil.vexler123@gmail.com
+[2025-06-04 16:34:31,515] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:34:31] "[32mGET /auth/oauth/google?code=4/0AUJR-x4oBcdervolCf8pm6R22VCJZBI-R-1kD2btrvUubzvAyRfwPOd7GLD2HjiLFoyW7Q&scope=email+profile+openid+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&authuser=0&prompt=none HTTP/1.1[0m" 302 -
+[2025-06-04 16:34:31,517] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:34:31,517] INFO in app.utils: Token not valid
+[2025-06-04 16:34:31,517] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:34:31,518] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:34:31] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:36:51,737] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-04 16:36:51,737] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-04 16:36:53,157] INFO in app.routes.main: User requested home page
+[2025-06-04 16:36:53,158] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:36:53] "GET / HTTP/1.1" 200 -
+[2025-06-04 16:36:54,364] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:36:54,364] INFO in app.utils: Token not valid
+[2025-06-04 16:36:54,364] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:36:54,365] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:36:54] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:36:57,930] INFO in app.routes.auth: Received OAuth code, exchanging for tokens.
+[2025-06-04 16:36:58,221] INFO in app.routes.auth: Google user info retrieved: danil.vexler123@gmail.com
+[2025-06-04 16:36:58,225] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-06-04 16:36:58,226] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+[2025-06-04 16:36:58,227] INFO in sqlalchemy.engine.Engine: [generated in 0.00015s] {'email_1': 'danil.vexler123@gmail.com', 'param_1': 1}
+[2025-06-04 16:36:58,229] INFO in app.routes.auth: User already exists: danil.vexler123@gmail.com
+[2025-06-04 16:36:58,229] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:36:58] "[32mGET /auth/oauth/google?code=4/0AUJR-x52tirue1LK9TU5MCdX9MdPhhcVc_XXrIiULSNoT6nSosIeMKfOHDwl2iCjecWADw&scope=email+profile+openid+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&authuser=0&prompt=none HTTP/1.1[0m" 302 -
+[2025-06-04 16:36:58,232] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:36:58,232] INFO in app.utils: Token not valid
+[2025-06-04 16:36:58,232] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:36:58,232] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:36:58] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:38:22,168] ERROR in app.routes.errors: That URL is not found
+[2025-06-04 16:38:22,169] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:38:22] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-04 16:38:30,089] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:38:30,089] INFO in app.utils: Token not valid
+[2025-06-04 16:38:30,090] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:38:30,090] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:38:30] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:38:30,103] ERROR in app.routes.errors: That URL is not found
+[2025-06-04 16:38:30,103] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:38:30] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-04 16:38:33,343] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:38:33,343] INFO in app.utils: Token not valid
+[2025-06-04 16:38:33,343] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:38:33,344] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:38:33] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:38:34,003] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:38:34,004] INFO in app.utils: Token not valid
+[2025-06-04 16:38:34,004] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:38:34,004] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:38:34] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:38:38,638] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:38:38,638] INFO in app.utils: Token not valid
+[2025-06-04 16:38:38,638] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:38:38,639] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:38:38] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:38:43,153] INFO in app.routes.auth: Received OAuth code, exchanging for tokens.
+[2025-06-04 16:38:43,405] INFO in app.routes.auth: Google user info retrieved: danil.vexler123@gmail.com
+[2025-06-04 16:38:43,405] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+[2025-06-04 16:38:43,405] INFO in sqlalchemy.engine.Engine: [cached since 105.2s ago] {'email_1': 'danil.vexler123@gmail.com', 'param_1': 1}
+[2025-06-04 16:38:43,406] INFO in app.routes.auth: User already exists: danil.vexler123@gmail.com
+[2025-06-04 16:38:43,407] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:38:43] "[32mGET /auth/oauth/google?code=4/0AUJR-x6T6nxmlA7R_OSgUx7xg0EIS9Cypdo8rPTOZC3QlIrtfnJJbR6pDlOXcugBepllVw&scope=email+profile+openid+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&authuser=0&prompt=none HTTP/1.1[0m" 302 -
+[2025-06-04 16:38:43,409] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:38:43,409] INFO in app.utils: Token not valid
+[2025-06-04 16:38:43,409] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:38:43,409] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:38:43] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:38:54,415] ERROR in app.routes.errors: That URL is not found
+[2025-06-04 16:38:54,416] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:38:54] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-04 16:39:01,366] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:39:01,366] INFO in app.utils: Token not valid
+[2025-06-04 16:39:01,367] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:39:01,367] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:39:01] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:39:01,380] ERROR in app.routes.errors: That URL is not found
+[2025-06-04 16:39:01,381] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:39:01] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-04 16:39:02,616] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:39:02,616] INFO in app.utils: Token not valid
+[2025-06-04 16:39:02,616] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:39:02,617] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:39:02] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:39:02,629] ERROR in app.routes.errors: That URL is not found
+[2025-06-04 16:39:02,629] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:39:02] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-04 16:44:14,259] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-04 16:44:14,259] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-04 16:44:15,753] INFO in app.routes.main: User requested home page
+[2025-06-04 16:44:15,755] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:44:15] "GET / HTTP/1.1" 200 -
+[2025-06-04 16:44:17,071] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:44:17,071] INFO in app.utils: Token not valid
+[2025-06-04 16:44:17,071] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:44:17,073] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:44:17] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:44:20,130] INFO in app.routes.auth: Received OAuth code, exchanging for tokens.
+[2025-06-04 16:44:20,395] INFO in app.routes.auth: Google user info retrieved: danil.vexler123@gmail.com
+[2025-06-04 16:44:20,399] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-06-04 16:44:20,403] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+[2025-06-04 16:44:20,403] INFO in sqlalchemy.engine.Engine: [generated in 0.00058s] {'email_1': 'danil.vexler123@gmail.com', 'param_1': 1}
+[2025-06-04 16:44:20,407] INFO in app.routes.auth: User already exists: danil.vexler123@gmail.com
+[2025-06-04 16:44:20,408] ERROR in app: Exception on /auth/oauth/google [GET]
+Traceback (most recent call last):
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\QrCodeGen\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\QrCodeGen\app\routes\auth.py", line 55, in google_oauth_handler
+    full_name=f"{user.first_name} {user.last_name}",
+                 ^^^^
+UnboundLocalError: cannot access local variable 'user' where it is not associated with a value
+[2025-06-04 16:44:20,409] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:44:20] "[35m[1mGET /auth/oauth/google?code=4/0AUJR-x54zb1sE_vAnpwCKuNXe1y51GfBouMim24I8RD9fLW6s-K0MUxzigdQ1Sgap5tpTQ&scope=email+profile+openid+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&authuser=0&prompt=none HTTP/1.1[0m" 500 -
+[2025-06-04 16:45:14,320] INFO in werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.74:8000
+[2025-06-04 16:45:14,320] INFO in werkzeug: [33mPress CTRL+C to quit[0m
+[2025-06-04 16:45:15,424] INFO in app.routes.main: User requested home page
+[2025-06-04 16:45:15,426] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:45:15] "GET / HTTP/1.1" 200 -
+[2025-06-04 16:45:16,228] INFO in app.routes.auth: Sign-in page requested
+[2025-06-04 16:45:16,228] INFO in app.utils: Token not valid
+[2025-06-04 16:45:16,228] INFO in app.routes.auth: No valid refresh token, rendering sign-in page.
+[2025-06-04 16:45:16,230] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:45:16] "GET /auth/sign-in HTTP/1.1" 200 -
+[2025-06-04 16:45:19,020] INFO in app.routes.auth: Received OAuth code, exchanging for tokens.
+[2025-06-04 16:45:19,301] INFO in app.routes.auth: Google user info retrieved: danil.vexler123@gmail.com
+[2025-06-04 16:45:19,307] INFO in sqlalchemy.engine.Engine: BEGIN (implicit)
+[2025-06-04 16:45:19,309] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+[2025-06-04 16:45:19,310] INFO in sqlalchemy.engine.Engine: [generated in 0.00024s] {'email_1': 'danil.vexler123@gmail.com', 'param_1': 1}
+[2025-06-04 16:45:19,311] INFO in app.routes.auth: User already exists: danil.vexler123@gmail.com
+[2025-06-04 16:45:19,312] INFO in app.utils: JWT tokens successfully created for user_id=1
+[2025-06-04 16:45:19,312] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:45:19] "[32mGET /auth/oauth/google?code=4/0AUJR-x7i1d9zo1hCJ_Web2W-h3YsqB0P7yW0BSH9M150X257ZXuT3NlFOm4cATWUhyrbOA&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile+openid&authuser=0&prompt=none HTTP/1.1[0m" 302 -
+[2025-06-04 16:45:19,316] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 16:45:19,318] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 16:45:19,318] INFO in sqlalchemy.engine.Engine: [generated in 0.00015s] {'pk_1': 1}
+[2025-06-04 16:45:19,320] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-04 16:45:19,320] INFO in sqlalchemy.engine.Engine: [generated in 0.00012s] {'param_1': 1}
+[2025-06-04 16:45:19,323] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:45:19] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 16:46:41,067] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 16:46:41,068] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 16:46:41,068] INFO in sqlalchemy.engine.Engine: [cached since 81.75s ago] {'pk_1': 1}
+[2025-06-04 16:46:41,070] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-04 16:46:41,070] INFO in sqlalchemy.engine.Engine: [cached since 81.75s ago] {'param_1': 1}
+[2025-06-04 16:46:41,071] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:46:41] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 16:46:41,956] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 16:46:41,956] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 16:46:41,956] INFO in sqlalchemy.engine.Engine: [cached since 82.64s ago] {'pk_1': 1}
+[2025-06-04 16:46:41,958] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-04 16:46:41,958] INFO in sqlalchemy.engine.Engine: [cached since 82.64s ago] {'param_1': 1}
+[2025-06-04 16:46:41,960] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:46:41] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 16:46:42,180] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 16:46:42,180] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 16:46:42,181] INFO in sqlalchemy.engine.Engine: [cached since 82.86s ago] {'pk_1': 1}
+[2025-06-04 16:46:42,182] INFO in sqlalchemy.engine.Engine: SELECT qrcodes.id AS qrcodes_id, qrcodes.qr_type AS qrcodes_qr_type, qrcodes.pickle_obj AS qrcodes_pickle_obj, qrcodes.user_id AS qrcodes_user_id 
+FROM qrcodes 
+WHERE %(param_1)s = qrcodes.user_id
+[2025-06-04 16:46:42,182] INFO in sqlalchemy.engine.Engine: [cached since 82.86s ago] {'param_1': 1}
+[2025-06-04 16:46:42,184] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:46:42] "GET /account/ HTTP/1.1" 200 -
+[2025-06-04 16:48:54,459] INFO in app.routes.qrcode: User entered selector for qr-code
+[2025-06-04 16:48:54,460] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:48:54] "GET /qrcode/ HTTP/1.1" 200 -
+[2025-06-04 16:48:55,249] INFO in app.routes.qrcode: User entered website url qr-generator
+[2025-06-04 16:48:55,250] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:48:55] "GET /qrcode/urlgen HTTP/1.1" 200 -
+[2025-06-04 16:48:57,388] INFO in app.middlewares: Valid token: access granted
+[2025-06-04 16:48:57,389] INFO in sqlalchemy.engine.Engine: SELECT users.id AS users_id, users.first_name AS users_first_name, users.last_name AS users_last_name, users.phone_number AS users_phone_number, users.email AS users_email, users.password AS users_password 
+FROM users 
+WHERE users.id = %(pk_1)s
+[2025-06-04 16:48:57,389] INFO in sqlalchemy.engine.Engine: [cached since 218.1s ago] {'pk_1': 1}
+[2025-06-04 16:48:57,394] INFO in sqlalchemy.engine.Engine: INSERT INTO qrcodes (qr_type, pickle_obj, user_id) VALUES (%(qr_type)s, %(pickle_obj)s, %(user_id)s) RETURNING qrcodes.id
+[2025-06-04 16:48:57,394] INFO in sqlalchemy.engine.Engine: [generated in 0.00026s] {'qr_type': 'url', 'pickle_obj': <psycopg2.extensions.Binary object at 0x0000024F8713D890>, 'user_id': 1}
+[2025-06-04 16:48:57,396] INFO in sqlalchemy.engine.Engine: COMMIT
+[2025-06-04 16:48:57,400] INFO in werkzeug: 127.0.0.1 - - [04/Jun/2025 16:48:57] "POST /qrcode/generate?type=url HTTP/1.1" 200 -
