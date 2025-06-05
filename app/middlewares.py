@@ -4,13 +4,14 @@ import jwt
 from jwt import ExpiredSignatureError, InvalidTokenError
 import logging
 from app.utils import validate_token
-
+from functools import wraps
 from flask import redirect
 
 logger = logging.getLogger(__name__)
 
 
 def auth_required(handler):
+    @wraps(handler)
     def wrapper(*args, **kwargs):
         access_token = request.cookies.get("access")
 

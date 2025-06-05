@@ -24,6 +24,9 @@ class User(Base):
         self.email = email
         self.password = password
 
+    def get_full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
 class QrCode(Base):
 
     __tablename__ = "qrcodes"

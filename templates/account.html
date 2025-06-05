@@ -158,7 +158,7 @@
     {% if qr_codes %}
     <div class="qrcode-grid">
       {% for code in qr_codes %}
-        <a href="" class="qrcode-card">
+        <a href="/qrcode/view/{{ code.id }}" class="qrcode-card">
           <img src="{{code.get_svg()}}" alt="QR Code" />
           <h3>{{ code.id }}</h3>
         </a>
