@@ -1,5 +1,5 @@
 from sqlalchemy.orm import declarative_base, relationship
-from sqlalchemy import Column, Integer, String, Table, ForeignKey
+from sqlalchemy import Column, Integer, String, Table, ForeignKey, Boolean
 from sqlalchemy.types import PickleType
 
 Base = declarative_base()
@@ -14,6 +14,7 @@ class User(Base):
     phone_number = Column(String, unique=True, nullable=True)
     email = Column(String, unique=True, nullable=False)
     password = Column(String, unique=False, nullable=True)
+    is_verified = Column(Boolean, default=False, unique=False, nullable=False)
 
     qrcodes = relationship("QrCode", back_populates="user")
 

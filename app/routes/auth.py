@@ -12,6 +12,7 @@ from app.database.models import User
 from app.database import session
 import logging
 import requests
+from app.verification import SmtpVerifier
 
 faker = Faker()
 
@@ -19,6 +20,7 @@ logger = logging.getLogger(__name__)
 
 router = Blueprint("auth", __name__)
 
+verifier = SmtpVerifier()
 
 @router.get("/oauth/google")
 def google_oauth_handler():
@@ -182,3 +184,11 @@ def sign_in_sub_handler():
     except SQLAlchemyError as e:
         logger.exception(f"Unexpected DB error during login for {email}: {e}")
         return "Internal Server Error"
+
+# @router.get("/verify")
+# def verification_handler():
+#     code = request.args.get("code")
+#     ver_status = verifier.verify(code)
+#     if ver_status:
+#         return redirect("/account")
+
