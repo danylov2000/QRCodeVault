@@ -16,14 +16,16 @@ class User(Base):
     password = Column(String, unique=False, nullable=True)
     is_verified = Column(Boolean, default=False, unique=False, nullable=False)
 
+
     qrcodes = relationship("QrCode", back_populates="user")
 
-    def __init__(self, first_name, last_name, email, password=None,  phone_number=None):
+    def __init__(self, first_name, last_name, email, password=None,  phone_number=None, is_verified=False):
         self.first_name = first_name
         self.last_name = last_name
         self.phone_number = phone_number
         self.email = email
         self.password = password
+        self.is_verified = is_verified
 
     def get_full_name(self):
         return f"{self.first_name} {self.last_name}"

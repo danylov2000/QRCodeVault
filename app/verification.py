@@ -2,12 +2,12 @@ import os
 import smtplib
 import uuid
 from email.message import EmailMessage
-
+import logging
 HOST = os.environ.get("SMTP_HOST")
 USERNAME = os.environ.get("SMTP_USERNAME")
 PASSWORD = os.environ.get("SMTP_PASSWORD")
 PORT = os.environ.get("SMTP_PORT")
-
+logger = logging.getLogger(__name__)
 
 class SmtpVerifier:
 
@@ -23,9 +23,9 @@ class SmtpVerifier:
 
     def verify(self, code):
         if code in self.active_verifications:
-            self.active_verifications.pop(code)
-            return True
-        return False
+            user_id = self.active_verifications.pop(code)
+            return user_id
+        return None
 
     def send_confirmation_email(self, recipient, user_id):
 
@@ -38,3 +38,4 @@ class SmtpVerifier:
         msg["To"] = recipient
         msg.set_content(f"Click the url to verify your account: {url}")
         self.connection.send_message(msg)
+        logger.info(f"email was sent to {user_id}")

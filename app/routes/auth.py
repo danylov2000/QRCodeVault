@@ -1,4 +1,4 @@
-
+import uuid
 
 from faker import Faker
 
@@ -22,6 +22,7 @@ router = Blueprint("auth", __name__)
 
 verifier = SmtpVerifier()
 
+
 @router.get("/oauth/google")
 def google_oauth_handler():
     code = request.args.get("code")
@@ -41,7 +42,8 @@ def google_oauth_handler():
             user = User(
                 first_name=user_info["given_name"],
                 last_name=user_info["family_name"],
-                email=user_info["email"]
+                email=user_info["email"],
+                is_verified = True
             )
 
             session.add(user)
@@ -111,6 +113,11 @@ def sign_in_handler():
 @router.get("/sign-up")
 def sign_up_handler():
     logger.info("Sign-up page requested")
+    access = request.cookies.get("access")
+    refresh = request.cookies.get("refresh")
+    if access or refresh:
+        logger.info("Session ended")
+        return redirect("/auth/logout")
     return render_template("signup.html", google_link=google_auth_url)
 
 
@@ -127,6 +134,7 @@ def sign_up_sub_handler():
 
     hashed_password = hash_pass(password)
 
+
     user = User(
         first_name=first_name,
         last_name=last_name,
@@ -137,6 +145,7 @@ def sign_up_sub_handler():
     try:
         session.add(user)
         session.commit()
+        verifier.send_confirmation_email(email, user.id)
         logger.info(f"Successfully created user account for: {email}")
         return redirect("/auth/sign-in")
     except IntegrityError:
@@ -185,10 +194,21 @@ def sign_in_sub_handler():
         logger.exception(f"Unexpected DB error during login for {email}: {e}")
         return "Internal Server Error"
 
-# @router.get("/verify")
-# def verification_handler():
-#     code = request.args.get("code")
-#     ver_status = verifier.verify(code)
-#     if ver_status:
-#         return redirect("/account")
+
+@router.get("/verify")
+def verification_handler():
+    code = request.args.get("code")
+    user_id = verifier.verify(code)
+    if user_id:
+        try:
+            user = session.query(User).get(user_id)
+            user.is_verified = True
+            session.add(user)
+            session.commit()
+            logger.info(f"User: {user_id}, successfully verified their account.")
+            return redirect("/account")
+        except Exception as e:
+            logger.error(f"User: {user_id} could not verify their account")
+    logger.error("Error occurred")
+    return render_template("error.html")
 
